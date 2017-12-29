@@ -1,0 +1,16 @@
+header {
+    height: 160px;
+    border-bottom: 1px solid;
+}
+
+footer {
+    height: 160px;
+    border-top: 1px solid;
+}
+
+h1 {
+    text-align: center;
+    display: inline;
+    font-size: 100px;
+    margin-left: 400px;
+}
