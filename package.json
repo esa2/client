@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Skynet-slackers/client#readme",
   "dependencies": {
-    "pages": "0.0.16"
+    "page": "^1.7.1"
   }
 }
