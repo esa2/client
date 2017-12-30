@@ -1,0 +1,22 @@
+{
+  "name": "uvue-client",
+  "version": "1.0.0",
+  "description": "This is the client application for the uVue web app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skynet-slackers/client.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Skynet-slackers/client/issues"
+  },
+  "homepage": "https://github.com/Skynet-slackers/client#readme",
+  "dependencies": {
+    "pages": "0.0.16"
+  }
+}
