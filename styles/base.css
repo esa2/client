@@ -1,3 +1,8 @@
+html{
+    margin: 10px;
+}
+
+
 header {
     height: 160px;
     border-bottom: 1px solid;
@@ -6,13 +11,6 @@ header {
 footer {
     height: 160px;
     border-top: 1px solid;
-}
-
-h1 {
-    /* text-align: center; */
-    display: inline;
-    font-size: 100px;
-    margin-left: 100px;
 }
 ul{
     list-style: none;

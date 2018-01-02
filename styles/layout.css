@@ -21,7 +21,7 @@ button {
 .hamburger{
     width: 7%;
     position: absolute;
-    top: 12%;
+    top: 0.9%;
     right: 10%;
   }
   
@@ -53,4 +53,8 @@ button {
     display: inline;
     top: 10%;
     right: 1200px;
+    text-align: center;
+    display: inline;
+    font-size: 100px;
+    margin-left: 100px;
   }
