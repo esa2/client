@@ -46,7 +46,7 @@ button {
   
   .main-nav li{
     width: 80%;
-    border: 1px lightgrey solid;
+    /* border: 1px lightgrey solid; */
     padding: 1%;
   }
   .nav-h1{
