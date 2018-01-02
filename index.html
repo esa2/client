@@ -18,74 +18,55 @@
     <h1>uVue</h1>
   </header>
   
-  <main>
-    <div>
-      <p>Welcome to uVue</p>
+  <!-- added handlevabars for the inputs below  -->
+  
+  <script type="text/x-handlebars-template" class="user-profile-template">
+    <div class="user-account" data-userid={{user_id}}>
+      <div class="user-container">
+        <h2>{{username}}</h2>
+        <p>{{}}</p>
+        <p>{{}}</p>
+        <p>{{}}</p>
+      </div>
     </div>
-  </main>
-
-<!-- added handlevabars for the inputs below  -->
-
-<script type="text/x-handlebars-template" class="user-profile-template">
-  <div class="user-account" data-userid={{user_id}}> 
-    <div class="user-container">
-      <h2>{{username}}</h2>
-      <p>{{}}</p>
-      <p>{{}}</p>
-      <p>{{}}</p>
-    </div>
+  </script>
+  
+  <!-- added handle bars for user inputs/database above  -->
+  
+  <section>
+    <h2>User Profile</h2>
+    <form class="user-form content">
+      <h2>Please Create a Username</h2>
+      <input type="text" class="user-name" name="user-name" size="50" placeholder="Username" required>
+      <h2>Create Secure Password</h2>
+      <input type="text" class="user-password" name="user-password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+  
+  <div class="logout-button content">
+    <button>Logout</button>
   </div>
-</script>
-
-<!-- added handle bars for user inputs/database above  -->
-
-
-    <!-- adding user input content below -->
-
-        
-        <form class="user-form">
-            <h1>User Profile</h1>
-          <label>
-            <h2>Please Create a Username</h2>
-            <input type="text" class="user-name" name="username" size="50" placeholder="Username" required>
-          </label>
-          <label>
-              <h2>Create Secure Password</h2>
-            <input name="user-password" type="text" class="user-password" placeholder="Password" required>
-          </label>
-          </form>
-          
-
-        <form class="interest-form">
-          <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-a" type="text" class="interest-a" placeholder="Interest">
-          </label>
-      <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-b" type="text" class="interest-b" placeholder="Interest">
-          </label>
-          <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-c" type="text" class="interest-c" placeholder="Interest">
-          </label>
-          <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-d" type="text" class="interest-d" placeholder="Interest">
-          </label>
-          <label>
-            <br>
-            <button class="user-submit" class="primary-btn" type="submit">Create New Profile</button>
-          </label>
-        </form>
-    
-      <!-- added user input content above -->
+  
+  <section>
+    <form class="interest-form content">
+      <h2>Personal Interest</h2>
+      <input name="interest-a" type="text" class="interest-a" placeholder="Interest">
+      <h2>Personal Interest</h2>
+      <input name="interest-b" type="text" class="interest-b" placeholder="Interest">
+      <h2>Personal Interest</h2>
+      <input name="interest-c" type="text" class="interest-c" placeholder="Interest">
+      <h2>Personal Interest</h2>
+      <input name="interest-d" type="text" class="interest-d" placeholder="Interest">
+      <button class="user-submit" class="primary-btn" type="submit">Create New Profile</button>
+    </form>
+  </section>
   <footer>
-      <p>&copy; 2017 uVue.com<p>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-  <script src="/scripts/views/app.js"></script>
-</body>
-</html>
+    <p>&copy; 2017 uVue.com<p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="/scripts/views/app.js"></script>
+  </body>
+  </html>
