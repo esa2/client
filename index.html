@@ -11,11 +11,35 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
   <link rel="icon" type="image/png" href="favicon.ico">
+
+  <!-- added handlevabars for the inputs below  -->
+
+<script type="text/x-handlebars-template" class="user-profile-template">
+  <div class="user-account" data-userid={{user_id}}> 
+    <div class="user-container">
+      <h2>{{username}}</h2>
+      <p>{{}}</p>
+      <p>{{}}</p>
+      <p>{{}}</p>
+    </div>
+  </div>
+</script>
+
+<!-- added handle bars for user inputs/database above  -->
 </head>
 <body>
   <header>
-    <img class="logo-img" src="images/logo.png" alt="site logo image of a movie camera">
+      <div class="header-content">
     <h1>uVue</h1>
+      <a href="/"><img class="logo-img" src="images/logo.png" alt="site logo image of a movie camera" alt="logo" class="shield"></a>
+      <!-- <h1 class="nav-h1">BOOKS</h1>
+      <nav class="main-nav">
+        <label for="show-nav" class="show-nav"> <img class="hamburger" src="assets/Hamburger_icon.svg.png"></label>
+      <input type = "checkbox" id="show-nav">
+        <ul class="menu">
+          <li class="tab"><a href="/">All Books</a></li>
+          <li class="tab"><a href="/newbook">New Book</a></li> -->
+    </div>
   </header>
   
   <main>
