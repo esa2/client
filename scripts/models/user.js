@@ -8,6 +8,7 @@ var app = app || {};
 
   // All videos per user interest
   User.videos = [];
+  User.active = null;
 
   function errorCallback(err) {
     console.error(err);
@@ -19,10 +20,9 @@ var app = app || {};
   }
 
   User.authenticate = (ctx, callback) => {
-    console.log(ctx, 'good shit!');
-  //   $.get(`${__API_URL__}/api/v1/users/:username`)
-  //     .then(console.log)
-  //     .catch(errorCallback);
+    $.get(`${__API_URL__}/api/v1/users/:username`)
+      .then(console.log)
+      .catch(errorCallback);
   }
 
   module.User = User;

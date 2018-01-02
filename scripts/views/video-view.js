@@ -2,7 +2,6 @@
 var app = app || {};
 
 (function() {
-
   function resetView() {
     $('.content').hide();
     if (localStorage.uvueUser) {
@@ -27,5 +26,4 @@ var app = app || {};
   });
 
   resetView();
-
-})(app)
+})(app);
