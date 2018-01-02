@@ -26,7 +26,7 @@
 
 <!-- added handlevabars for the inputs below  -->
 
-<script type="text/x-handlebars-template" id="user-profile-template">
+<script type="text/x-handlebars-template" class="user-profile-template">
   <div class="user-account" data-userid={{user_id}}> 
     <div class="user-container">
       <h2>{{username}}</h2>
@@ -42,39 +42,42 @@
 
     <!-- adding user input content below -->
 
-    <section id="form-view" class="container">
-        <h1>User Profile</h1>
-        <form action="#" id="user-form">
+        
+        <form class="user-form">
+            <h1>User Profile</h1>
           <label>
             <h2>Please Create a Username</h2>
-            <input type="text" id="user-name" name="username" size="50" placeholder="Username" required>
+            <input type="text" class="user-name" name="username" size="50" placeholder="Username" required>
           </label>
           <label>
               <h2>Create Secure Password</h2>
-            <input name="user-password" type="text" id="user-password" placeholder="Password" required>
+            <input name="user-password" type="text" class="user-password" placeholder="Password" required>
+          </label>
+          </form>
+          
+
+        <form class="interest-form">
+          <label>
+              <h2>Personal Interest</h2>
+            <input name="interest-a" type="text" class="interest-a" placeholder="Interest">
+          </label>
+      <label>
+              <h2>Personal Interest</h2>
+            <input name="interest-b" type="text" class="interest-b" placeholder="Interest">
           </label>
           <label>
               <h2>Personal Interest</h2>
-            <input name="interest-a" type="text" id="interest-a" placeholder="Interest" required>
+            <input name="interest-c" type="text" class="interest-c" placeholder="Interest">
           </label>
           <label>
               <h2>Personal Interest</h2>
-            <input name="interest-b" type="text" id="interest-b" placeholder="Interest" required>
-          </label>
-          <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-c" type="text" id="interest-c" placeholder="Interest" required>
-          </label>
-          <label>
-              <h2>Personal Interest</h2>
-            <input name="interest-d" type="text" id="interest-d" placeholder="Interest" required>
+            <input name="interest-d" type="text" class="interest-d" placeholder="Interest">
           </label>
           <label>
             <br>
-            <button id="user-submit" class="primary-btn" type="submit">Create New Profile</button>
+            <button class="user-submit" class="primary-btn" type="submit">Create New Profile</button>
           </label>
         </form>
-      </section>
     
       <!-- added user input content above -->
   <footer>
@@ -83,5 +86,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+  <script src="/scripts/views/app.js"></script>
 </body>
 </html>

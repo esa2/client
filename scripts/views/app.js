@@ -1,10 +1,13 @@
 if (localStorage.uvueUser) {
-  $('#form-view').hide();
+  $('.user-form').hide();
+} else {
+  $('.interest-form').hide();
+  $('.user-form').show();
 }
 
-$('#form-view').on('submit', function(event) {
+$('.user-form').on('submit', function(event) {
   event.preventDefault();
-  localStorage.uvueUser = $('#form-view input[name="username"]').val();
+  localStorage.uvueUser = $('.user-form input[name="username"]').val();
   window.location.reload();
 });
 
