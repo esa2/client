@@ -1,4 +1,3 @@
-
 function resetView() {
   $('.content').hide();
   if (localStorage.uvueUser) {
