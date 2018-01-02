@@ -1,22 +1,9 @@
-header {
-    background-color: rgb(255, 0, 0);
+.header-content{
+  margin:0%;
 }
 
-h2 {
-    margin-left: 40%;
-}
-
-input {
-    margin-left: 40%;
-    font-size:14pt;
-    height:40px;
-    width:400px;
-}
-
-button {
-    margin-top: 4%;
-    margin-left: 47%;
-    font-size:18pt;
+.form-sec{
+  border-top:1px;
 }
 .hamburger{
     width: 7%;
@@ -46,7 +33,6 @@ button {
   
   .main-nav li{
     width: 80%;
-    /* border: 1px lightgrey solid; */
     padding: 1%;
   }
   .nav-h1{
