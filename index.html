@@ -47,6 +47,27 @@
   <div class="logout-button content">
     <button>Logout</button>
   </div>
+
+    <!-- adding user input content below -->
+
+    <section id="home-login" class="container">
+        <h1>Welcome User</h1>
+        <form action="#" id="user-form">
+          <label>
+            <h2>Please Login</h2>
+            <input type="text" id="user-name" name="username" size="50" placeholder="Username" required>
+          </label>
+          <label>
+            <input name="user-password" type="text" id="user-password" placeholder="Password" required>
+          </label>
+          <label>
+            <br>
+            <button id="user-submit" class="primary-btn" type="submit"><a href="/user/authenticate">Login</a></button>
+          </label>
+        </form>
+      </section>
+    
+      <!-- added user input content above -->
   
   <section>
     <form class="interest-form content">
@@ -78,6 +99,9 @@
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="/scripts/models/video.js"></script>
     <script src="/scripts/views/routes.js"></script>
+    <script src="/scripts/models/user.js"></script>
+    <script src="/scripts/models/video.js"></script>
     <script src="/scripts/views/video-view.js"></script>
+    <script src="/scripts/views/user-view.js"></script>
   </body>
   </html>

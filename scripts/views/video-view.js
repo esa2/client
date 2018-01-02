@@ -39,4 +39,4 @@ var app = app || {};
 
   })
 
-})(app)
+})(app);
