@@ -1,6 +1,8 @@
-'use strict'
+'use strict';
 
-page('/'
+page('/', );
+page('/user/authenticate', (ctx, next) =>
+  app.User.authenticate(ctx, app.userView.initIndexPage),
 );
 
 page();
