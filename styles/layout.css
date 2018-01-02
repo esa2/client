@@ -1,9 +1,10 @@
 .header-content{
   margin:0%;
+  display: block;
 }
 
 .form-sec{
-  border-top:1px;
+  margin-top: 10%;
 }
 .hamburger{
     width: 7%;
@@ -12,6 +13,10 @@
     right: 10%;
   }
   
+  .hb-list{
+    padding:1%;
+    border-bottom: 1px solid;
+  }
   .main-nav input[type=checkbox] {
     display: none;
   }
@@ -43,4 +48,8 @@
     display: inline;
     font-size: 100px;
     margin-left: 100px;
+  }
+  @media all and (min-width: 450px) {
+    
+    
   }
