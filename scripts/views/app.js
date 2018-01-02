@@ -1,17 +1,25 @@
-if (localStorage.uvueUser) {
-  $('.user-form').hide();
-} else {
-  $('.interest-form').hide();
-  $('.user-form').show();
+
+function resetView() {
+  $('.content').hide();
+  if (localStorage.uvueUser) {
+    $('.interest-form').show();
+    $('.logout-button').show();
+  } else {
+    $('.user-form input[name="user-name"]').val('');
+    $('.user-form input[name="user-password"]').val('');
+    $('.user-form').show();
+  }
 }
 
 $('.user-form').on('submit', function(event) {
   event.preventDefault();
-  localStorage.uvueUser = $('.user-form input[name="username"]').val();
-  window.location.reload();
+  localStorage.uvueUser = $('.user-form input[name="user-name"]').val();
+  resetView();
 });
 
 $('.logout-button').on('click', 'button', function() {
   localStorage.clear();
-  window.location.reload();
+  resetView();
 });
+
+resetView();
