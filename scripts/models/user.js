@@ -8,6 +8,7 @@ var app = app || {};
 
   // All videos per user interest
   User.videos = [];
+  User.active = null;
 
   function errorCallback(err) {
     console.error(err);
