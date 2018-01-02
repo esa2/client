@@ -18,3 +18,39 @@ button {
     margin-left: 47%;
     font-size:18pt;
 }
+.hamburger{
+    width: 7%;
+    position: absolute;
+    top: 12%;
+    right: 10%;
+  }
+  
+  .main-nav input[type=checkbox] {
+    display: none;
+  }
+  
+  .main-nav input[type=checkbox]:checked ~ .menu {
+    display: block;
+    width: 100%;
+    background-color:rgb(255, 0, 0);
+  }
+  
+  .show-menu{
+    cursor: pointer;
+  }
+  
+  .main-nav ul {
+    position: static;
+    display:none;
+  }
+  
+  .main-nav li{
+    width: 80%;
+    border: 1px lightgrey solid;
+    padding: 1%;
+  }
+  .nav-h1{
+    display: inline;
+    top: 10%;
+    right: 1200px;
+  }
