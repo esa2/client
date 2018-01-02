@@ -22,8 +22,8 @@ var __API_URL__ = 'http://localhost:3000';
   Video.all = [];
   Video.loadAll = rows => Video.all = rows.sort((a, b) => b.title - a.title).map(video => new Video(video));
 
-  Video.find = (video, callback) =>
-    $.get(`${__API_URL__}/api/v3/videos/find`, video)
+  Video.search = (video, callback) =>
+    $.get(`${__API_URL__}/api/v3/videos/search`, video)
       .then(Video.loadAll)
       .then(callback)
       .catch(errorCallback)
