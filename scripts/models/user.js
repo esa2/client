@@ -18,10 +18,11 @@ var app = app || {};
     Object.keys(rawUserObj).map(key => this[key] = rawUserObj[key]);
   }
 
-  User.authenticate = (ctx) => {
-    $.get(`${__API_URL__}/api/v1/users/:username`)
-      .then(console.log)
-      .catch(errorCallback);
+  User.authenticate = (ctx, callback) => {
+    console.log(ctx, 'good shit!');
+  //   $.get(`${__API_URL__}/api/v1/users/:username`)
+  //     .then(console.log)
+  //     .catch(errorCallback);
   }
 
   module.User = User;
