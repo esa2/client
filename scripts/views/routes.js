@@ -1,6 +1,6 @@
 'use strict'
 
-page('/videos'
+page('/'
 );
 
 page();
