@@ -6,8 +6,8 @@ var app = app || {};
   // var __API_URL__ = 'https://uvue.herokuapp.com';
   var __API_URL__ = 'http://localhost:3000';
   // All videos per user interest
-  User.videos = [];
   User.user = null;
+  User.interests = null;
 
   function errorCallback(err) {
     console.error(err);
@@ -17,6 +17,24 @@ var app = app || {};
   function User(rawUserObj) {
     Object.keys(rawUserObj).map(key => (this[key] = rawUserObj[key]));
   }
+
+  // Read interests for the current user from the database
+  User.fetchInterests = (ctx, next) => {
+    // Only attempt to fetch the interests if the user is logged in
+    if (!User.user) {
+      console.log(`Error, User.user = null, uvueUser=${localStorage.uvueUser}`);
+      return;
+    }
+    $.get(`${__API_URL__}/api/v1/users/${User.user.username}/search`)
+      .then(User.loadInterests)
+      .then(next)
+      .catch(errorCallback);
+  };
+
+  User.loadInterests = dbRows => {
+    // map the rows and store interest/search strings under the User
+    User.interests = dbRows.map(ele => ele.search_string);
+  };
 
   // Load a user
   User.loadIt = dbRow => {
@@ -33,9 +51,19 @@ var app = app || {};
     User.user = null;
     $.get(`${__API_URL__}/api/v1/users/${username}`)
       .then(User.loadIt)
-      .then(() => callback(username, arg))
+      .then(() => {
+        if (callback)
+          callback(username, arg);
+      })
       .catch(errorCallback);
   };
+
+  // Do post logout cleanup of User
+  User.logout = () => {
+    localStorage.removeItem('uvueUser');
+    User.user = null;
+    User.interests = null;
+  }
 
   // Validate the password
   User.validate = (username, password) => {
@@ -63,10 +91,11 @@ var app = app || {};
     $.post(`${__API_URL__}/api/v1/users`, arg)
       .then(() => {
         localStorage.uvueUser = JSON.stringify(username);
-        User.fetch(username, null, () => page(`/user/${username}/feed`));
+        User.fetch(username);
       })
+      .then(() => page(`/user/${username}/feed`))
       .catch(errorCallback);
-  }
+  };
 
   module.User = User;
 })(app);
