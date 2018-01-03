@@ -15,15 +15,27 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Video.prototype.toHtml = function() {
-    let template = Handlebars.compile($('#video-list-template').text());
+    let template = Handlebars.compile($('.video-list-template').text());
     return template(this);
   }
 
   Video.all = [];
-  Video.loadAll = rows => Video.all = rows.sort((a, b) => b.title - a.title).map(video => new Video(video));
+  Video.loadAll = function() {
+    Video.all = Video.raw.map(ele => {
+      return {'videoId' : ele.id.videoId,
+        'thumbnail' : ele.snippet.thumbnails.default,
+        'title' : ele.snippet.title,
+        'publishedDate' : ele.snippet.publishedAt}
+    })
+  }
 
-  Video.search = (video, callback) =>
-    $.get(`${__API_URL__}/api/v3/videos/search`, video)
+  Video.search = (searchTerm, callback) =>
+    $.get(`${__API_URL__}/api/v3/videos/search`, searchTerm)
+      .then( results => {
+        console.log(results)
+        console.log(results.items[0].id)
+        Video.raw = results.items;
+      })
       .then(Video.loadAll)
       .then(callback)
       .catch(errorCallback)

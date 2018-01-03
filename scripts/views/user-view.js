@@ -28,14 +28,17 @@ var app = app || {};
     resetView();
   });
 
-  const videoView = {};
-
   resetView();
   $('.search-view').show();
   $('.search-form').on('submit', function(event) {
     event.preventDefault();
 
-    module.Video.search(videoView.initsearchResultsPage);
+    let searchValue = $('.search-form input[name="search"]').val();
+    let searchValueObj = {
+      search: searchValue
+    }
+    console.log('search for ' + searchValueObj)
+    module.Video.search(searchValueObj);
 
   })
 
