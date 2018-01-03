@@ -14,6 +14,15 @@
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
+  <script type="text/x-handlebars-template" class="video-list-template">
+    <li class="video-items">
+      <div class="video-container">
+        <h3>{{title}}</h3>
+        <p>{{publishedDate}}</p>
+        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </li>
+  </script>
 </head>
 <body>
   <header class="header">
@@ -63,6 +72,14 @@
       </form>
       <section class="search-detail"></section>
     </section>
+
+    <!-- iframe view -->
+    <section class="video-view content">
+      <h2 class="view-title">Your video list</h2>
+      <section class="video-list">
+      </section>
+    </section>
+
     <!-- Error View -->
     <section class="error-view content">
       <h2 class="view-title">Ya din done something wrong.</h2>

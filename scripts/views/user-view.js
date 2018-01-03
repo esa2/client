@@ -16,9 +16,23 @@ var app = app || {};
     $('.search-view').show();
     $('.search-form').on('submit', function(event) {
       event.preventDefault();
-      module.Video.search(userView.initsearchResultsPage);
+      let searchValue = $('.search-form input[name="search"]').val();
+      let searchValueObj = {
+        search: searchValue
+      }
+      console.log('search for ')
+      console.log(searchValueObj)
+      module.Video.search(searchValueObj);
     });
   };
+
+  // Show video list
+  userView.initVideoList = () => {
+    resetView();
+    $('.video-view').show()
+    let template = Handlebars.compile($('.video-list-template').text());
+    $('.video-list').append(template(app.Video.all[0]));
+  }
 
   // Show the Signin view
   userView.initSigninView = () => {
