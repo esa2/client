@@ -12,8 +12,12 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = () => {
     resetView();
-    $('.logout-button').show();
+    $('.logout-div').show();
     $('.search-view').show();
+    $('.logout-btn').one('click', function(event){
+      event.preventDefault();
+      
+    });
     $('.search-form').on('submit', function(event) {
       event.preventDefault();
       module.Video.search(userView.initsearchResultsPage);
