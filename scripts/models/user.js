@@ -42,19 +42,19 @@ var app = app || {};
     // It was an invalid username
     if (User.user === null) {
       console.log('Invalid Username!');
-    } else if (User.user.password != password) {
+    } else if (User.user.password !== password) {
       console.log(`Invalid Password for ${User.user.username}!`);
     } else {
       console.log('Successfully logged in!');
       // Store username in localStorage for persistence of login
       localStorage.uvueUser = JSON.stringify(User.user.username);
-      page('/user/${User.user.username}/feed');
+      page(`/user/${User.user.username}/feed`);
     }
   };
 
   // First verify, then create
   User.create = (username, arg) => {
-    if (User.user != null) {
+    if (User.user !== null) {
       console.log('Error, this user already exists!');
       return;
     }
