@@ -3,6 +3,7 @@
 var app = app || {};
 
 (function(module) {
+
   const userView = {}
 
   userView.initIndexPage = function(ctx, next) {
@@ -12,11 +13,7 @@ var app = app || {};
     console.log(userView, 'working');
     // next()
   }
+
   module.userView = userView;
 })(app);
 
-
-app.userView.initIndexPage();
-// $(function() {
-//   app.User.fetchAll(app.userView.initIndexView)
-// })

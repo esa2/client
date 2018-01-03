@@ -1,9 +1,9 @@
-// 'use strict';
+'use strict';
 
-// page('/', () => app.User.fetchAll(app.userView.initIndexView))
+page('/', );
+page('/user/authenticate'
+  , app.User.authenticate
+  , result => app.userView.InitIndexPage(result)
+);
 
-
-// page('/user/authenticate',
-//     // (ctx, next) => app.User.authenticate(ctx, app.userView.initIndexPage));  
-//     (ctx, next) => console.log(ctx, 'good shit!'));
-//     page ();
+page();
