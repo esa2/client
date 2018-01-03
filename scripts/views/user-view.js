@@ -16,7 +16,10 @@ var app = app || {};
     $('.search-view').show();
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
-      
+      // Remove logged in user for localstorage
+      localStorage.removeItem('uvueUser');
+      module.User.user = null;
+      page('/');
     });
     $('.search-form').on('submit', function(event) {
       event.preventDefault();
