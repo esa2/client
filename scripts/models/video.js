@@ -15,7 +15,6 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Video.prototype.toHtml = function() {
-    console.log('tohtml')
     let template = Handlebars.compile($('.video-list-template').text());
     return template(this);
   }
@@ -28,6 +27,8 @@ var __API_URL__ = 'http://localhost:3000';
         'title' : ele.snippet.title,
         'publishedDate' : ele.snippet.publishedAt}
     })
+    console.log(Video.all)
+    app.userView.initVideoList();
   }
 
   Video.search = (searchTerm, callback) =>

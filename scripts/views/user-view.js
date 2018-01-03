@@ -17,15 +17,28 @@ var app = app || {};
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
-      localStorage.removeItem('uvueUser');
-      module.User.user = null;
+      module.User.logout()
       page('/');
     });
     $('.search-form').on('submit', function(event) {
       event.preventDefault();
-      module.Video.search(userView.initsearchResultsPage);
+      let searchValue = $('.search-form input[name="search"]').val();
+      let searchValueObj = {
+        search: searchValue
+      }
+      console.log('search for ')
+      console.log(searchValueObj)
+      module.Video.search(searchValueObj);
     });
   };
+
+  // Show video list
+  userView.initVideoList = () => {
+    resetView();
+    $('.video-view').show()
+    let template = Handlebars.compile($('.video-list-template').text());
+    $('.video-list').append(template(app.Video.all[0]));
+  }
 
   // Show the Signin view
   userView.initSigninView = () => {
@@ -63,14 +76,20 @@ var app = app || {};
       let realname = e.target.realname.value;
       let username = e.target.username.value;
       let password = e.target.password.value;
-      module.User.fetch(username, {'realname': realname, 'password': password}, module.User.create);
+      module.User.fetch(username, {
+        'realname': realname,
+        'password': password
+      }, module.User.create);
     });
   };
 
   userView.initIndexPage = () => {
     // If a user is logged in already immediately navigate to /feed
     if (localStorage.uvueUser) {
-      page(`/user/${JSON.parse(localStorage.uvueUser)}/feed`);
+      console.log(`Found a logged in user ${localStorage.uvueUser}`)
+      // If their was a user logged in previously, try to fetch the user
+      module.User.fetch(JSON.parse(localStorage.uvueUser), null,
+        () => page(`/user/${JSON.parse(localStorage.uvueUser)}/feed`));
     } else {
       page('/signin');
     }
