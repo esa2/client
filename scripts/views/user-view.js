@@ -10,15 +10,14 @@ var app = app || {};
   }
 
   // Show the Video Feed
-  userView.initFeedView = ctx => {
+  userView.initFeedView = () => {
     resetView();
     $('.logout-button').show();
     $('.search-view').show();
     $('.search-form').on('submit', function(event) {
       event.preventDefault();
       module.Video.search(userView.initsearchResultsPage);
-  });
-
+    });
   };
 
   // Show the Signin view
