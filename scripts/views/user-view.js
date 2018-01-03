@@ -18,7 +18,6 @@ var app = app || {};
       event.preventDefault();
       module.Video.search(userView.initsearchResultsPage);
     });
-
   };
 
   // Show the Signin view
