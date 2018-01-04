@@ -58,7 +58,7 @@
 .logo-img {
   align-content: right;
   width: 66px;
-  position: static;
+  /* position: static; */
 }
 @media all and (min-width: 500px) {
   .hamburger {
