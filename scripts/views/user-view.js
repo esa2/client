@@ -6,13 +6,15 @@ var app = app || {};
   const userView = {};
 
   function resetView() {
-    $('.content').hide();
+    // $('.content').hide();
   }
 
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
+    
     $('.logout-section').show();
+
     // $('.search-view').show(); COMMENTED OUT IN INDEX.HTML
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
@@ -34,6 +36,8 @@ var app = app || {};
     console.log('Adding videos now!');
 
     $('.video-view').show()
+    $('.signin-section').hide();
+
 
     // Append all videos to the view
     app.Video.all.forEach(video =>{
@@ -45,13 +49,26 @@ var app = app || {};
       }
       $('.video-list').append(template(video));
 
+    $('.video-dmview').show()
+    $('.signin-section content').hide();
+
+
+    // Append all videos to the view
+    app.Video.allDm.forEach(video =>{
+      let template = Handlebars.compile($('.video-dmlist-template').text());
+      $('.video-dmlist').append(template(video));
+
     })
   }
   
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
-
+    $('.signin-form').show();
+    $('.signup-section').hide();
+    $('.video-view').hide();
+    $('.video-dmview').hide();
+    $('.error-view').hide();
     // Clear out the current signin fields
     $('.signin-form input[name="username"]').val('');
     $('.signin-form input[name="password"]').val('');
@@ -70,6 +87,14 @@ var app = app || {};
 
   userView.initSignupView = () => {
     resetView();
+
+     // Show the signup form
+     $('.signup-form').show();
+     $('.signin-section').hide();
+
+    //  $('.logout-btn').hide();
+    //  $('.signin-btn').hide();
+     // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
 
     // Clear out the current signup fields
     $('.signup-form input[name="username"]').val('');
