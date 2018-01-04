@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
+  <link rel="stylesheet" href="./styles/button.css">
+
   <link rel="icon" type="image/png" href="/images/favicon.ico">
   <!-- Application Templates -->
   <script type="text/x-handlebars-template" id="error-template">
@@ -20,6 +22,11 @@
         <h3>{{title}}</h3>
         <p>{{publishedDate}}</p>
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
+                  <!------------ I ADDED DAILY MOTION VIDEO PLAYER ------>
+  <iframe id="ytplayer" frameborder="0" width="480" height="270"
+  src="//www.dailymotion.com/embed/video/VIDEO_ID?PARAMS"
+  allowfullscreen></iframe>
+    <!------------ I ADDED DAILY MOTION VIDEO PLAYER ---------------------->
       </div>
     </li>
   </script>
@@ -39,7 +46,7 @@
         </ul>
     </div>
     <div class="logout-div content">
-      <button class="logout-btn" type="button">Logout</button>
+      <button data-hover="use youtube" class="logout-btn" type="button"><div>Logout</div></button>
     </div>
   </header>
   <!-- Main section -->
@@ -50,10 +57,12 @@
       <form class="signin-form">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button class="signin-btn" type="submit">Sign In</button>
+        <!-- style button -->
+        <button data-hover="fuck off!" class="signin-btn" type="submit"><div>Sign In</div></button>
       </form>
-      <p><a href="/signup">Sign Up</a></p>
+      <p><buton ><a href="/signup">Sign Up</a></buton></p>
     </section>
+    
     <!-- Sign Up Form -->
     <section class="signup-section content">
       <h2>Sign Up</h2>
@@ -61,14 +70,14 @@
         <input type="text" name="realname" placeholder="Full Name" required>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button class="signup-btn" type="submit">Sign Up</button>
+        <button data-hover="dont sign up" class="signup-btn" type="submit"><div>Sign Up</div></button>
       </form>
     </section>
 
     <section class="search-view content">
       <form class="search-form">
         <input type="text" name="search" placeholder="search videos">
-        <button type="submit">search</button>
+        <button data-hover="get a life" type="submit"><div>search</div></button>
       </form>
       <section class="search-detail"></section>
     </section>
@@ -86,6 +95,7 @@
       <section id="error-message"></section>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2017 uVue.com<p>
   </footer>
