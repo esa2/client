@@ -35,7 +35,6 @@ var app = app || {};
   // Show video list
   userView.initVideoList = (ctx, next) => {
     // If no videos were found, the user needs to add more interests
-    debugger;
     if (app.Video.all.length === 0) {
       console.log('No Interests! Add them now!');
       return;
@@ -51,6 +50,25 @@ var app = app || {};
       $('.video-list').append(template(video));
     })
   }
+  // adding dm content
+  userView.initDmVideoList = (ctx, next) => {
+    // If no videos were found, the user needs to add more interests
+    // if (app.Video.all.length === 0) {
+    //   console.log('No Interests! Add them now!');
+    //   return;
+    // }
+
+    console.log('Adding DM videos now!');
+
+    $('.video-dmview').show()
+
+    // Append all videos to the view
+    app.Video.allDm.forEach(video =>{
+      let template = Handlebars.compile($('.video-dmlist-template').text());
+      $('.video-dmlist').append(template(video));
+    })
+  }
+  //dm content above
 
   // Show the Signin view
   userView.initSigninView = () => {

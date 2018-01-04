@@ -1,6 +1,10 @@
 *, *:before *:after{
 box-sizing: border-box
 }
+/* main {
+    background-image:
+        url("https://pre00.deviantart.net/490a/th/pre/f/2008/071/e/0/apple_theatre_2_by_jasonh1234.jpg");
+} */
 
 nav{
 background: red;
