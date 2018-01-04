@@ -12,6 +12,7 @@ footer {
 }
 ul{
     list-style: none;
+    display: inline-flex;
 }
 
 h2 {
@@ -19,14 +20,18 @@ h2 {
 }
 
 input {
+    min-height: 10%;
+    margin-top: 10%;
     margin-left: 40%;
     font-size:14pt;
     height:40px;
     width:400px;
 }
 
-button {
+button { 
     margin-top: 4%;
     margin-left: 47%;
     font-size:18pt;
+    
 }
+
