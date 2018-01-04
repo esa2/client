@@ -40,6 +40,41 @@ var __API_URL__ = 'http://localhost:3000';
       .then(next)
       .catch(errorCallback);
   }
+//dailymotion api 
+  Video.allDm = [];
+  Video.loadAllDm = function() {
+    // Concatenate all videos to the Video.all array
+    Video.allDm = Video.allDm.concat(Video.rawDm.map(ele => {
+      return {
+        'videoId' : ele.id,
+        // 'thumbnail' : ele.snippet.thumbnails.default,
+        'title' : ele.title}
+        // 'publishedDate' : ele.snippet.publishedAt}
+    }))
+    console.log(Video.allDm)
+  }
 
+// api dailymotion stuff
+  Video.findDmByInterests = (ctx, next) => {
+    Video.allDm = [];
+    console.log('Video.findByInterests');
+    module.User.interests.forEach((interest, idx, arr) => {
+      console.log(`Searching for ${interest}`)
+      $.get(`${__API_URL__}/api/dailymotion/videos/search`, { 'search': interest })
+        .then(results => {
+          console.log(results)
+          // console.log(results.items[0].id)
+          Video.rawDm = results.list;
+        })
+        .then(Video.loadAllDm)
+        .then(() => {
+          if (idx === arr.length - 1) {
+            console.log(`CALLING NEXT() idx: ${idx}`);
+            next();
+          }
+        })
+        .catch(errorCallback)
+    });
+  }
   module.Video = Video;
 })(app)
