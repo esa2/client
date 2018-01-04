@@ -71,7 +71,6 @@ var app = app || {};
     $('.signup-form input[name="username"]').val('');
     $('.signup-form input[name="password"]').val('');
 
-
     // Set a signup event handler on the signup button once
     $('.signup-form').one('submit', function(e) {
       e.preventDefault();
