@@ -16,6 +16,7 @@
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
+
   <script type="text/x-handlebars-template" class="video-list-template">
       <div class="video-container">
         <h3>{{title}}</h3>
@@ -26,7 +27,7 @@
     <script type="text/x-handlebars-template" class="video-dmlist-template">
       <div class="video-dmcontainer">
           <h3>{{title}}</h3>
-        <iframe frameborder="0" width="480" height="270"
+        <iframe frameborder="0" width="720" height="405"
           src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
         </iframe>
       </div>
@@ -75,27 +76,12 @@
       </form>
     </section>
 
-    <!-- <section class="search-view content">
-      <form class="search-form">
-        <input type="text" name="search" placeholder="search videos">
-        <button data-hover="get a life" class="search-btn" type="submit"><div>search</div></button>
-      </form>
-      <section class="search-detail"></section>
-    </section> -->
-
-    <!-- iframe YouTube view -->
+    <!-- Video View -->
     <section class="video-view content">
       <h2 class="view-title">Your video list</h2>
       <section class="video-list">
       </section>
     </section>
-
-    <!-- iframe Daily Motion view -->
-    <section class="video-dmview content">
-      <h2 class="view-dmtitle">Your video list</h2>
-      <section class="video-dmlist">
-      </section>
-    </section> 
 
     <!-- Error View -->
     <section class="error-view content">
