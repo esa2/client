@@ -36,7 +36,6 @@ var app = app || {};
   // Show video list
   userView.initVideoList = (ctx, next) => {
     // If no videos were found, the user needs to add more interests
-    debugger;
     if (app.Video.all.length === 0) {
       console.log('No Interests! Add them now!');
       return;
