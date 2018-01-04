@@ -7,7 +7,7 @@ page('/user/:username/feed',
   (ctx, next) => app.User.fetchInterests(ctx, next),
   (ctx, next) => app.userView.initFeedView(ctx, next),
   (ctx, next) => app.Video.findByInterests(ctx, next),
-  (ctx, next) => app.userView.initVideoList(ctx, next)
+  (ctx) => app.userView.initVideoList(ctx)
 );
 
 page();
