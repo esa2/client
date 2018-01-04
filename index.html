@@ -16,20 +16,24 @@
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
+
   <script type="text/x-handlebars-template" class="video-list-template">
-    <li class="video-items">
       <div class="video-container">
         <h3>{{title}}</h3>
         <p>{{publishedDate}}</p>
-        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
-                  <!------------ I ADDED DAILY MOTION VIDEO PLAYER ------>
-  <iframe id="ytplayer" frameborder="0" width="480" height="270"
-  src="//www.dailymotion.com/embed/video/VIDEO_ID?PARAMS"
-  allowfullscreen></iframe>
-    <!------------ I ADDED DAILY MOTION VIDEO PLAYER ---------------------->
+        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen>
+        </iframe>
       </div>
-    </li>
   </script>
+
+  <script type="text/x-handlebars-template" class="video-dmlist-template">
+    <div class="video-dmcontainer">
+        <h3>{{title}}</h3>
+      <iframe frameborder="0" width="480" height="270"
+        src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
+      </iframe>
+    </div>
+    </script>
 </head>
 <body>
   <header class="header">
@@ -82,10 +86,17 @@
       <section class="search-detail"></section>
     </section>
 
-    <!-- iframe view -->
+    <!-- iframe youtube view -->
     <section class="video-view content">
       <h2 class="view-title">Your video list</h2>
       <section class="video-list">
+      </section>
+    </section>
+
+    <!-- iframe DM view -->
+    <section class="video-dmview content">
+      <h2 class="view-dmtitle">Your video list</h2>
+      <section class="video-dmlist">
       </section>
     </section>
 
