@@ -13,7 +13,7 @@ var app = app || {};
   userView.initFeedView = (ctx, next) => {
     resetView();
     $('.logout-div').show();
-    $('.search-view').show();
+    // $('.search-view').show(); COMMENTED OUT IN INDEX.HTML
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
@@ -81,6 +81,9 @@ var app = app || {};
 
     // Show the signin form
     $('.signin-section').show();
+    $('.logout-btn').hide();
+    // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
+
 
     // Set a signin event handler on the signin button once
     $('.signin-form').one('submit', function(e) {
@@ -100,6 +103,10 @@ var app = app || {};
 
     // Show the signup form
     $('.signup-section').show();
+    $('.logout-btn').hide();
+    $('.signin-btn').hide();
+    // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
+
 
     // Set a signup event handler on the signup button once
     $('.signup-form').one('submit', function(e) {
@@ -115,6 +122,10 @@ var app = app || {};
   };
 
   userView.initIndexPage = () => {
+    $('.signin-btn').hide();
+    $('.signup-btn').hide();
+    $('.signin-form').hide();
+
     // If a user is logged in already immediately navigate to /feed
     if (localStorage.uvueUser) {
       console.log(`Found a logged in user ${localStorage.uvueUser}`)
