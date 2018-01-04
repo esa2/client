@@ -21,16 +21,6 @@ var app = app || {};
       page('/');
     });
     next();
-    // $('.search-form').on('submit', function(event) {
-    //   event.preventDefault();
-    //   let searchValue = $('.search-form input[name="search"]').val();
-    //   let searchValueObj = {
-    //     search: searchValue
-    //   }
-    //   console.log('search for ')
-    //   console.log(searchValueObj)
-    //   module.Video.search(searchValueObj);
-    // });
   };
 
   // Show video list
@@ -47,30 +37,17 @@ var app = app || {};
 
     // Append all videos to the view
     app.Video.all.forEach(video =>{
-      let template = Handlebars.compile($('.video-list-template').text());
+      let template;
+      if (video.source === 'youtube') {
+        template = Handlebars.compile($('.video-list-template').text());
+      } else {
+        template = Handlebars.compile($('.video-dmlist-template').text());
+      }
       $('.video-list').append(template(video));
+
     })
   }
-  // adding dm content
-  userView.initDmVideoList = (ctx, next) => {
-    // If no videos were found, the user needs to add more interests
-    // if (app.Video.all.length === 0) {
-    //   console.log('No Interests! Add them now!');
-    //   return;
-    // }
-
-    console.log('Adding DM videos now!');
-
-    $('.video-dmview').show()
-
-    // Append all videos to the view
-    app.Video.allDm.forEach(video =>{
-      let template = Handlebars.compile($('.video-dmlist-template').text());
-      $('.video-dmlist').append(template(video));
-    })
-  }
-  //dm content above
-
+  
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
