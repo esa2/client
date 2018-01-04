@@ -57,7 +57,7 @@ var app = app || {};
 
 
     // Append all videos to the view
-    app.Video.allDm.forEach(video =>{
+    app.Video.allDm.forEach(video => {
       let template = Handlebars.compile($('.video-dmlist-template').text());
       $('.video-dmlist').append(template(video));
 
