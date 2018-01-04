@@ -5,6 +5,7 @@ box-sizing: border-box
 nav{
 background: red;
 overflow: hidden;
+margin: 1px;
 };
 
 div .header{
@@ -13,9 +14,9 @@ div .header{
 .header {
 float: left;
 color: white;
-padding: 15px;
+padding: 0px;
 overflow: hidden;
-width: 80%;
+width: 79%;
 }
 
 .logo{
@@ -35,7 +36,7 @@ padding: 15px;
 
 .toggle{
 float: right;
-background: red;
+/* background: red; */
 color: black;
 border:0;
 font-size: 50px;
@@ -63,21 +64,26 @@ li {
   height: 80px;
   padding: 20px;
   display:inline-block;
+  margin: 1px;
 
 }
 
 li:hover{
   background-color: crimson;
 }
-
+.signin-section{
+  margin: 10px;
+}
 @media (max-width: 760px){
 .header{
   float: none;
+  padding:0px;
 }
 nav ul{
-  background: black;
+  background:red;
   max-height: 0;
   width: 100%;
+  position: relative;
 }
 nav ul.show{
   max-height: 20em;
@@ -87,6 +93,7 @@ nav ul li{
   padding: 15px;
 }
 .toggle{
-  display: inline;
+  display:inline-block;
+  margin: 0px;
 }
 }
