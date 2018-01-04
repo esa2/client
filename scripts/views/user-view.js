@@ -97,5 +97,11 @@ var app = app || {};
     }
   };
 
+  $(document).ready(function(){
+    $('.toggle').on('click', function(){
+      $('nav ul').toggleClass('show');
+    });
+  });
+
   module.userView = userView;
 })(app);
