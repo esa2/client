@@ -6,13 +6,18 @@ var app = app || {};
   const userView = {};
 
   function resetView() {
-    $('.content').hide();
+    // $('.content').hide();
   }
 
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
+    $('.signin-form').hide();
+    $('.signup-section').hide();
     $('.logout-div').show();
+  
+
+
     // $('.search-view').show(); COMMENTED OUT IN INDEX.HTML
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
@@ -44,6 +49,8 @@ var app = app || {};
     console.log('Adding videos now!');
 
     $('.video-view').show()
+    $('.signin-section').hide();
+
 
     // Append all videos to the view
     app.Video.all.forEach(video =>{
@@ -62,6 +69,8 @@ var app = app || {};
     console.log('Adding DM videos now!');
 
     $('.video-dmview').show()
+    $('.signin-section content').hide();
+
 
     // Append all videos to the view
     app.Video.allDm.forEach(video =>{
@@ -74,14 +83,17 @@ var app = app || {};
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
-
+    $('.signin-form').show();
+    $('.signup-section').hide();
+    $('.video-view').hide();
+    $('.video-dmview').hide();
+    $('.error-view').hide();
     // Clear out the current signin fields
     $('.signin-form input[name="username"]').val('');
     $('.signin-form input[name="password"]').val('');
 
-    // Show the signin form
-    $('.signin-section').show();
     $('.logout-btn').hide();
+
     // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
 
 
@@ -97,15 +109,17 @@ var app = app || {};
   userView.initSignupView = () => {
     resetView();
 
+     // Show the signup form
+     $('.signup-form').show();
+     $('.signin-section').hide();
+
+    //  $('.logout-btn').hide();
+    //  $('.signin-btn').hide();
+     // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
+
     // Clear out the current signup fields
     $('.signup-form input[name="username"]').val('');
     $('.signup-form input[name="password"]').val('');
-
-    // Show the signup form
-    $('.signup-section').show();
-    $('.logout-btn').hide();
-    $('.signin-btn').hide();
-    // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
 
 
     // Set a signup event handler on the signup button once
@@ -122,9 +136,11 @@ var app = app || {};
   };
 
   userView.initIndexPage = () => {
-    $('.signin-btn').hide();
-    $('.signup-btn').hide();
-    $('.signin-form').hide();
+    // $('.signin-btn').hide();
+    // $('.signup-btn').hide();
+    // $('.signin-form').hide();
+    $('.signin-section').hide();
+
 
     // If a user is logged in already immediately navigate to /feed
     if (localStorage.uvueUser) {
