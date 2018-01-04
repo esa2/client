@@ -10,7 +10,7 @@ var app = app || {};
   }
 
   // Show the Video Feed
-  userView.initFeedView = () => {
+  userView.initFeedView = (ctx, next) => {
     resetView();
     $('.logout-div').show();
     $('.search-view').show();
@@ -20,24 +20,37 @@ var app = app || {};
       module.User.logout()
       page('/');
     });
-    $('.search-form').on('submit', function(event) {
-      event.preventDefault();
-      let searchValue = $('.search-form input[name="search"]').val();
-      let searchValueObj = {
-        search: searchValue
-      }
-      console.log('search for ')
-      console.log(searchValueObj)
-      module.Video.search(searchValueObj);
-    });
+    next();
+    // $('.search-form').on('submit', function(event) {
+    //   event.preventDefault();
+    //   let searchValue = $('.search-form input[name="search"]').val();
+    //   let searchValueObj = {
+    //     search: searchValue
+    //   }
+    //   console.log('search for ')
+    //   console.log(searchValueObj)
+    //   module.Video.search(searchValueObj);
+    // });
   };
 
   // Show video list
-  userView.initVideoList = () => {
-    resetView();
+  userView.initVideoList = (ctx, next) => {
+    // If no videos were found, the user needs to add more interests
+    debugger;
+    if (app.Video.all.length === 0) {
+      console.log('No Interests! Add them now!');
+      return;
+    }
+
+    console.log('Adding videos now!');
+
     $('.video-view').show()
-    let template = Handlebars.compile($('.video-list-template').text());
-    $('.video-list').append(template(app.Video.all[0]));
+
+    // Append all videos to the view
+    app.Video.all.forEach(video =>{
+      let template = Handlebars.compile($('.video-list-template').text());
+      $('.video-list').append(template(video));
+    })
   }
 
   // Show the Signin view
