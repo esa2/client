@@ -21,26 +21,38 @@ var __API_URL__ = 'http://localhost:3000';
 
   Video.all = [];
   Video.loadAll = function() {
-    Video.all = Video.raw.map(ele => {
-      return {'videoId' : ele.id.videoId,
+    // Concatenate all videos to the Video.all array
+    Video.all = Video.all.concat(Video.raw.map(ele => {
+      return {
+        'videoId' : ele.id.videoId,
         'thumbnail' : ele.snippet.thumbnails.default,
         'title' : ele.snippet.title,
         'publishedDate' : ele.snippet.publishedAt}
-    })
+    }))
     console.log(Video.all)
-    app.userView.initVideoList();
   }
 
-  Video.search = (searchTerm, callback) =>
-    $.get(`${__API_URL__}/api/v3/videos/search`, searchTerm)
-      .then( results => {
-        console.log(results)
-        console.log(results.items[0].id)
-        Video.raw = results.items;
-      })
-      .then(Video.loadAll)
-      .then(callback)
-      .catch(errorCallback)
+  Video.findByInterests = (ctx, next) => {
+    Video.all = [];
+    console.log('Video.findByInterests');
+    module.User.interests.forEach((interest, idx, arr) => {
+      console.log(`Searching for ${interest}`)
+      $.get(`${__API_URL__}/api/v3/videos/search`, { 'search': interest })
+        .then(results => {
+          console.log(results)
+          console.log(results.items[0].id)
+          Video.raw = results.items;
+        })
+        .then(Video.loadAll)
+        .then(() => {
+          if (idx === arr.length - 1) {
+            console.log(`CALLING NEXT() idx: ${idx}`);
+            next();
+          }
+        })
+        .catch(errorCallback)
+    });
+  }
 
   module.Video = Video;
 })(app)
