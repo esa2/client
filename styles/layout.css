@@ -1,3 +1,8 @@
+/* main {
+    background-image:
+        url("https://pre00.deviantart.net/490a/th/pre/f/2008/071/e/0/apple_theatre_2_by_jasonh1234.jpg");
+} */
+
 .header-content {
   margin: 0%;
   display: block;
@@ -7,7 +12,7 @@
   width: 100%;
   z-index: 3;
   border: 1px solid;
-}
+  height: 130%;}
 
 .signin-section {
   margin-top: 10%;
@@ -80,13 +85,15 @@
 
   .main-nav ul {
     position: static;
-    display: inline-block;
+    /* display: inline-block; */
+    /* float: right; */
   }
 
   .main-nav li {
-    width: 80%;
+    /* width: 80%; */
     border: 1px;
     padding: 1%;
+    float: right;
   }
   .nav-h1 {
     display: inline;
@@ -99,6 +106,6 @@
   }
   .hb-list {
     padding: 1%;
-    /* background-color:rgb(255, 0, 0);    */
+    background-color:rgb(255, 0, 0);   
   }
 }

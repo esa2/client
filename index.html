@@ -21,6 +21,7 @@
       <div class="video-container">
         <h3>{{title}}</h3>
         <p>{{publishedDate}}</p>
+<<<<<<< HEAD
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen>
         </iframe>
       </div>
@@ -34,6 +35,19 @@
       </iframe>
     </div>
     </script>
+=======
+        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </script>
+    <script type="text/x-handlebars-template" class="video-dmlist-template">
+      <div class="video-dmcontainer">
+          <h3>{{title}}</h3>
+        <iframe frameborder="0" width="480" height="270"
+          src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
+        </iframe>
+      </div>
+      </script> 
+>>>>>>> 148178c9431155740a2e63a1e66e0228aedf2e67
 </head>
 <body>
   <header class="header">
@@ -43,7 +57,7 @@
       <nav class="main-nav">
         <label for="show-nav" class="show-nav"><img class="hamburger" src="images/hamburger-icon.png"></label>
       </nav>
-      <input type ="checkbox" id="show-nav">
+      <!-- <input type ="checkbox" id="show-nav"> -->
         <ul class="menu hb-list">
           <li class="tab"><a href="/">Home</a></li>
           <li class="tab"><a href="/about_us">About Us</a></li>
@@ -57,7 +71,7 @@
   <main>
     <!-- Sign In Form -->
     <section class="signin-section content">
-      <h2>Sign In</h2>
+      <br><h2>Welcome</h2></br> </section>
       <form class="signin-form">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
@@ -98,7 +112,11 @@
       <h2 class="view-dmtitle">Your video list</h2>
       <section class="video-dmlist">
       </section>
+<<<<<<< HEAD
     </section>
+=======
+    </section> 
+>>>>>>> 148178c9431155740a2e63a1e66e0228aedf2e67
 
     <!-- Error View -->
     <section class="error-view content">

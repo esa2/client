@@ -10,18 +10,22 @@ footer {
     height: 160px;
     border-top: 1px solid;
 }
+
 ul{
     list-style: none;
     display: inline-flex;
+    font-size: 20px;
 }
 
 h2 {
+    font-size: 30px;
+    font-weight: 400;
     margin-left: 40%;
 }
 
 input {
     min-height: 10%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     margin-left: 40%;
     font-size:14pt;
     height:40px;
