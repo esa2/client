@@ -1,104 +1,92 @@
-.header-content {
-  margin: 0%;
-  display: block;
-  background-color: rgb(255, 0, 0);
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
-  position: static;
+*, *:before *:after{
+box-sizing: border-box
+}
+
+nav{
+background: red;
+overflow: hidden;
+};
+
+div .header{
+  margin:0px;
+}
+.header {
+float: left;
+color: white;
+padding: 15px;
+overflow: hidden;
+width: 80%;
+}
+
+.logo{
+height: 100px;
+font-size: 24px;
+line-height: 24px;
+padding: 15px;
+}
+.nav-h1{
+  height: 0px;
+  font-size: 50px;
+  line-height: 120px;
+  padding: 0px;
+  position: relative;
+  right: -100px;
+}
+
+.toggle{
+float: right;
+background: red;
+color: black;
+border:0;
+font-size: 50px;
+cursor: pointer;
+display: none;
+}
+
+nav a {
+text-decoration: none;
+color: white;
+font-size: 25px;
+}
+
+nav ul {
+float: right;
+overflow: hidden;
+color: white;
+margin: 0;
+padding: 0;
+text-align: center;
+transition: max-height .5s;
+}
+
+li {
+  height: 80px;
+  padding: 20px;
+  display:inline-block;
+
+}
+
+li:hover{
+  background-color: crimson;
+}
+
+@media (max-width: 760px){
+.header{
+  float: none;
+}
+nav ul{
+  background: black;
+  max-height: 0;
   width: 100%;
-  z-index: 3;
-  border: 1px solid;
 }
-
-.signin-section {
-  margin-top: 10%;
+nav ul.show{
+  max-height: 20em;
 }
-.hamburger {
-  width: 6.5%;
-  position: absolute;
-  top: 4.5%;
-  right: 10%;
-}
-
-.hb-list {
-  padding: 1%;
-  background-color: rgb(255, 0, 0);
-}
-
-.main-nav input[type='checkbox'] {
-  display: none;
-}
-
-.main-nav input[type='checkbox']:checked ~ .menu {
-  display: block;
+nav ul li{
   width: 100%;
+  padding: 15px;
 }
-
-.show-menu {
-  cursor: pointer;
-}
-
-.main-nav ul {
-  position: static;
-  display: none;
-}
-
-.main-nav li {
-  width: 80%;
-  padding: 1%;
-}
-.nav-h1 {
+.toggle{
   display: inline;
-  top: 10%;
-  right: 1200px;
-  text-align: center;
-  display: inline;
-  font-size: 100px;
-  margin-left: 100px;
 }
-.logo-img {
-  align-content: right;
-  width: 66px;
-  /* position: static; */
-}
-@media all and (min-width: 500px) {
-  .hamburger {
-    display: none;
-    width: 7%;
-    position: absolute;
-    top: 0%;
-    right: 10%;
-  }
-  .main-nav .menu {
-    display: inline-flex;
-    width: 100%;
-    background-color: rgb(255, 0, 0);
-  }
-
-  .show-menu {
-    cursor: pointer;
-  }
-
-  .main-nav ul {
-    position: static;
-    display: inline-block;
-  }
-
-  .main-nav li {
-    width: 80%;
-    border: 1px;
-    padding: 1%;
-  }
-  .nav-h1 {
-    display: inline;
-    top: 10%;
-    right: 1200px;
-  }
-  .logo-img {
-    align-content: right;
-    width: 140px;
-  }
-  .hb-list {
-    padding: 1%;
-    /* background-color:rgb(255, 0, 0);    */
-  }
 }

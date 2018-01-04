@@ -8,7 +8,6 @@ var app = app || {};
   function resetView() {
     $('.content').hide();
   }
-
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
@@ -107,6 +106,12 @@ var app = app || {};
       page('/signin');
     }
   };
+
+  $(document).ready(function(){
+    $('.toggle').on('click', function(){
+      $('nav ul').toggleClass('show');
+    });
+  });
 
   module.userView = userView;
 })(app);
