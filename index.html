@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- adding animation -->
+  <div class="hide-anim" style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/A6aHBCFqlE0Rq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/the-simpsons-swag-homer-simpson-A6aHBCFqlE0Rq"></a></p>
+  <!-- adding animation -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +15,19 @@
 
   <link rel="icon" type="image/png" href="/images/favicon.ico">
   <!-- Application Templates -->
+  <!-- Error Template -->
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
-
+  <!-- YouTube video list template -->
   <script type="text/x-handlebars-template" class="video-list-template">
       <div class="video-container">
         <h3>{{title}}</h3>
-        <p>{{publishedDate}}</p>
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
       </div>
   </script>
+  <!-- DailyMotion video list template -->
   <script type="text/x-handlebars-template" class="video-dmlist-template">
     <div class="video-dmcontainer">
         <h3>{{title}}</h3>
@@ -32,8 +36,9 @@
       </iframe>
     </div>
   </script>
+  <!-- Interest Tag Template -->
   <script type="text/x-handlebars-template" class="interest-tag-template">
-    <a href='#' class="tag"> 
+    <a href='#' class="tag" data-tagname="{{value}}">
       {{value}} <span class="cross">X</span>
     </a>
   </script>
@@ -45,9 +50,10 @@
             <a href="/"><img class="logo" src="images/logo.png" alt="site logo image of a movie camera" alt="logo"></a>
               <button class="toggle">☰</button>
        <nav>
-         <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="about">about</a></li>
+         <ul class="nav-button content">
+            <li><button  class="nav-button" data-hover="go home" type="button"><a href="/">home</a></button></li>
+          <li><button data-hover="Dev Bio" class="nav-button" type="button"><a href="about">about</a></button></li>
+          <li class="logout-btn"><button data-hover="Comeback Soon" class="nav-button"  type="button"><a href="/"  >Logout</a></button></li>
         </ul>
       </nav>
     </div>
@@ -72,11 +78,11 @@
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <!-- style button -->
-        <button data-hover="Welcome Back!" class="signin-btn" type="submit">Sign In</button>
+        <button data-hover="Welcome Back!" class="signin-btn" type="submit"><div>Sign In</div></button>
       </form>
-      <button><a href="/client/signup">Sign Up</a></button>
+      <a class="sign-up" href="/client/signup"><div>Sign Up</div></a>
     </section>
-    
+
     <!-- Sign Up Form -->
     <section class="signup-section content">
       <h2>Sign Up</h2>
@@ -84,13 +90,12 @@
         <input type="text" name="realname" placeholder="Full Name" required>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button data-hover="Join the Team" class="signup-btn" type="submit">Sign Up></button>
+        <button data-hover="Join the Team" class="signup-btn" type="submit"><div>Sign Up</div></button>
       </form>
     </section>
 
     <!-- Video View -->
     <section class="video-view content">
-      <h2 class="view-title">Your video list</h2>
       <section class="video-list">
       </section>
     </section>

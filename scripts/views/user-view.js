@@ -9,10 +9,9 @@ var app = app || {};
     $('.content').hide();
   }
 
-  userView.initInterestSection = () => {
+  userView.initAddInterestSection = () => {
     app.User.tags = [];
 
-    console.log('userView.initInterestSection!!!!');
     // Event handler for adding a tag
     $('.interest-add-btn').on('click', function (e) {
       e.preventDefault();
@@ -34,8 +33,10 @@ var app = app || {};
     // Event handler for removing a tag
     $('.interest-section').on('click', '.cross', function(e) {
       e.preventDefault();
-      console.log('Detect delete interest click!')
-      app.User.tags.splice($(this).parent('a').html(), 1);
+      // Extract the index of the tag to remove
+      let idx = app.User.tags.indexOf($(this).parent('a').attr('data-tagname'));
+      // do it
+      app.User.tags.splice(idx, 1);
       $(this).parent('a').remove();
     });
   }
@@ -43,7 +44,20 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
-    $('.logout-section').show();
+
+    // animation hide/show start/stop
+    $(document).ajaxStart(function(){
+      $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+      $(".giphy-embed").css("display", "none");
+      $(".hide-anim").hide();
+    });
+    // animation hide/show start/stop
+
+
+    $('.nav-button').show();
+    $('.logout-btn').show();
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
@@ -81,8 +95,21 @@ var app = app || {};
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
-    $('.signin-section').show();
+    // animation hide/show start/stop
+    $(document).ajaxStart(function(){
+      $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+      // $(".giphy-embed").css("display", "none");
+      $(".hide-anim").hide();
+    });
 
+    // animation hide/show start/stop
+    $('.hide-anim').hide();
+    $('.logout-btn').hide();
+    $('.nav-button').show();
+
+    $('.signin-section').show();
     // Clear out the current signin fields
     $('.signin-form input[name="username"]').val('');
     $('.signin-form input[name="password"]').val('');
@@ -99,7 +126,7 @@ var app = app || {};
   userView.initSignupView = () => {
     resetView();
 
-    // Show the signup form
+    // Show the signup section
     $('.signup-section').show();
 
     // Clear out the current signup fields
