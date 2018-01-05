@@ -38,7 +38,7 @@
   </script>
   <!-- Interest Tag Template -->
   <script type="text/x-handlebars-template" class="interest-tag-template">
-    <a href='#' class="tag" data-tagname="{{value}}">
+    <a href='#' class="tag" data-interest="{{value}}">
       {{value}} <span class="cross">X</span>
     </a>
   </script>
@@ -61,8 +61,8 @@
   <!-- Main section -->
   <main>
     <!-- Interest tags section -->
-    <section class="interest-section content">
-      <h2>Create tags:</h2>
+    <section class="add-interest-section content">
+      <h2>Interest Editor</h2>
       <input type="textbox" placeholder="interests" id="interest-input"></input>
       <button class="interest-add-btn" type="button">Add</button><br/>
       <div class="tag-editor" contenteditable="false"></div>
