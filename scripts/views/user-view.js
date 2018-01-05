@@ -10,6 +10,8 @@ var app = app || {};
   }
 
   userView.initAddInterestSection = () => {
+    // First, empty the tag editor
+    $('.tag-editor').empty();
     // Populate interest tag editor with current interests
     app.User.interests.map(ele => {
       let template = Handlebars.compile($('.interest-tag-template').text());
