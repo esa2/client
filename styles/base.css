@@ -46,14 +46,14 @@ button {
     font-weight:510;
 }
 
-.logout-btn {
+.nav-button {
     float: right;
     background-color: black;
     -webkit-text-fill-color: white;
     margin-top: 0%;
-    font-size: 14px;
-    padding-top: 0px;
-    letter-spacing: 1px;
+    font-size: 10px;
+    /* padding-top: 0px;
+    letter-spacing: 1px; */
     /* margin-left: 47%; */
     /* margin-left: 100%; */
 }

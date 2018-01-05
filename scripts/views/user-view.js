@@ -12,7 +12,8 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
-    $('.logout-btn').show();
+    //testing a new nav
+    $('.nav-button').show();
 
 
     $('.logout-btn').one('click', function(event){
