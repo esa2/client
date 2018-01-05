@@ -67,3 +67,36 @@ html, body{background: rgb(236, 240, 241);}
         transition: all .3s ease-in-out;
       }
 
+      /* animation */
+      .modal {
+        margin-left: 400px;
+        display:    none;
+        position:   fixed;
+        z-index:    1000;
+        top:        0;
+        left:       0;
+        height:     100%;
+        width:      100%;
+        background: rgba( 255, 255, 255, .8 ) 
+                    url('https://giphy.com/embed/A6aHBCFqlE0Rq') 
+                    50% 50% 
+                    no-repeat;
+    }
+    
+    /* When the body has the loading class, we turn
+       the scrollbar off with overflow:hidden */
+    main.loading {
+        overflow: hidden;   
+        margin-left: 400px;
+
+
+    }
+    
+    /* Anytime the body has the loading class, our
+       modal element will be visible */
+    main.loading .modal {
+        display: block;
+        margin-left: 400px;
+
+    }
+

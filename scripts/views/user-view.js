@@ -12,6 +12,18 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
+
+    // animation hide/show start/stop
+    $(document).ajaxStart(function(){
+      $("#wait").css("display", "block");
+    });
+    $(document).ajaxComplete(function(){
+      $(".giphy-embed").css("display", "none");
+      $(".hide-anim").hide();
+    });
+    // animation hide/show start/stop
+
+
     $('.nav-button').show();
     $('.logout-btn').show();
     $('.logout-btn').one('click', function(event){
@@ -25,6 +37,7 @@ var app = app || {};
 
   // Show video list
   userView.initVideoList = () => {
+    
     // If no videos were found, the user needs to add more interests
     if (app.Video.all.length === 0) {
       console.log('No Interests! Add them now!');
@@ -47,6 +60,16 @@ var app = app || {};
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
+      // animation hide/show start/stop
+      $(document).ajaxStart(function(){
+        $("#wait").css("display", "block");
+      });
+      $(document).ajaxComplete(function(){
+        // $(".giphy-embed").css("display", "none");
+        $(".hide-anim").hide();
+      });
+      // animation hide/show start/stop
+    $('.hide-anim').hide();
     $('.logout-btn').hide();
     $('.nav-button').show();
 

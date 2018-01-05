@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  var __API_URL__ = 'https://uvue.herokuapp.com';
-  // var __API_URL__ = 'http://localhost:3000';
+  // var __API_URL__ = 'https://uvue.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
   // All videos per user interest
   User.user = null;
   User.interests = null;
