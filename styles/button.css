@@ -1,103 +1,121 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
 
-*, *:before, *:after{
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  padding: 0; margin: 0;
-  font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font: 300 1em/1.5 "Open Sans", "Helvetica Neue", Arial, sans-serif;
   text-decoration: none;
   color: #111;
 }
 
-html, body{background: rgb(236, 240, 241);}
+html,
+body {
+  background: rgb(236, 240, 241);
+}
 
-  section.container{
-    min-width: 500px;
-    margin: 10% auto;
-    text-align: center;
-  }
-    a:hover{border-bottom: 1px solid #111;} 
-    h1{font-size: 2em; padding: 20px 0;}
-    p{
-      font-size: 1em;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 20px 0;
-    }
+section.container {
+  min-width: 500px;
+  margin: 10% auto;
+  text-align: center;
+}
+a:hover {
+  border-bottom: 1px solid #111;
+}
+h1 {
+  font-size: 2em;
+  padding: 20px 0;
+}
+p {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 20px 0;
+}
 
-    button:hover{cursor: pointer}
-    button {
-      background: transparent; outline: none;
-      position: relative;
-      border: 2px solid #111;
-      padding: 15px 50px;
-      overflow: hidden;
-    }
+button:hover {
+  cursor: pointer;
+}
+button {
+  background: transparent;
+  outline: none;
+  position: relative;
+  border: 2px solid #111;
+  padding: 15px 50px;
+  overflow: hidden;
+}
 
-    /*button:before (attr data-hover)*/
-    button:hover:before{opacity: 1; transform: translate(0,0);}
-    button:before{
-      content: attr(data-hover);
-      position: absolute;
-      top: 1.1em; left: 0;
-      width: 100%;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 800;
-      font-size: .8em;
-      opacity: 0;
-      transform: translate(-100%,0);
-      transition: all .3s ease-in-out;
-    }
-      /* button div (button text before hover) */
-      button:hover a{opacity: 0; transform: translate(100%,0)}
-      button a{
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 800;
-        font-size: .8em;
-        transition: all .3s ease-in-out;
-        padding:10px;
-      }
+/*button:before (attr data-hover)*/
+button:hover:before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+button:before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 1.1em;
+  left: 0;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: all 0.3s ease-in-out;
+}
+/* button div (button text before hover) */
+button:hover a {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+button a {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+}
 
-      button:hover div{opacity: 0; transform: translate(100%,0)}
-      button div{
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 800;
-        font-size: .8em;
-        transition: all .3s ease-in-out;
-      }
+button:hover div {
+  opacity: 0;
+  transform: translate(100%, 0);
+}
+button div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
+}
 
-      /* animation */
-      .modal {
-        margin-left: 400px;
-        display:    none;
-        position:   fixed;
-        z-index:    1000;
-        top:        0;
-        left:       0;
-        height:     100%;
-        width:      100%;
-        background: rgba( 255, 255, 255, .8 ) 
-                    url('https://giphy.com/embed/A6aHBCFqlE0Rq') 
-                    50% 50% 
-                    no-repeat;
-    }
-    
-    /* When the body has the loading class, we turn
+/* animation */
+.modal {
+  margin-left: 400px;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8)
+    url("https://giphy.com/embed/A6aHBCFqlE0Rq") 50% 50% no-repeat;
+}
+
+/* When the body has the loading class, we turn
        the scrollbar off with overflow:hidden */
-    main.loading {
-        overflow: hidden;   
-        margin-left: 400px;
+main.loading {
+  overflow: hidden;
+  margin-left: 400px;
+}
 
-
-    }
-    
-    /* Anytime the body has the loading class, our
+/* Anytime the body has the loading class, our
        modal element will be visible */
-    main.loading .modal {
-        display: block;
-        margin-left: 400px;
-
-    }
-
+main.loading .modal {
+  display: block;
+  margin-left: 400px;
+}
