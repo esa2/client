@@ -66,6 +66,18 @@
   text-align: center;
   transition: max-height .5s;
   }
+
+  .video-view {
+    margin-left: 20%;
+    }
+    
+  .video-container {
+      margin-bottom: 40px;
+  }
+  
+  .video-dmcontainer {
+      margin-bottom: 40px;
+  }
   
   li {
     height: 80px;
