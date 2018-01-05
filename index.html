@@ -19,14 +19,13 @@
 
   <script type="text/x-handlebars-template" class="video-list-template">
       <div class="video-container">
-        <h3>{{title}}</h3>
-        <p>{{publishedDate}}</p>
+        <h2>{{title}}</h2>
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
       </div>
     </script>
     <script type="text/x-handlebars-template" class="video-dmlist-template">
       <div class="video-dmcontainer">
-          <h3>{{title}}</h3>
+          <h2>{{title}}</h2>
         <iframe frameborder="0" width="720" height="405"
           src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
         </iframe>
@@ -43,15 +42,17 @@
          <ul>
           <li><a href="/">home</a></li>
           <li><a href="about">about</a></li>
+          <li><button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button></li>
+
         </ul>
       </nav>
     </div>
+    <!-- <section class="logout-section content">
+      <button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button>
+   </section> -->
   </header>
   <!-- Main section -->
   <main>
-    <section class="logout-section content">
-       <button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button>
-    </section>
     <!-- Sign In Form -->
     <section class="signin-section content">
       <h2>Welcome</h2>
@@ -59,9 +60,9 @@
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <!-- style button -->
-        <button data-hover="Welcome Back!" class="signin-btn" type="submit">Sign In</button>
+        <button data-hover="Welcome Back!" class="signin-btn" type="submit"><div>Sign In</div></button>
       </form>
-      <button><a href="/client/signup">Sign Up</a></button>
+      <a class="sign-up" href="/client/signup"><div>Sign Up</div></a>
     </section>
     
     <!-- Sign Up Form -->
@@ -71,13 +72,12 @@
         <input type="text" name="realname" placeholder="Full Name" required>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button data-hover="Join the Team" class="signup-btn" type="submit">Sign Up></button>
+        <button data-hover="Join the Team" class="signup-btn" type="submit"><div>Sign Up</div></button>
       </form>
     </section>
 
     <!-- Video View -->
     <section class="video-view content">
-      <h2 class="view-title">Your video list</h2>
       <section class="video-list">
       </section>
     </section>

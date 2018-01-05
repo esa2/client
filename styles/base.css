@@ -37,7 +37,28 @@ button {
     margin-left: 47%;
     margin-bottom: 1%;
     font-size:18pt; 
-    /* display: inline-block; */
+    display: inline-block;
     
 }
 
+.sign-up {
+    text-align: center;
+    font-weight:510;
+}
+
+.logout-btn {
+    float: right;
+    background-color: black;
+    -webkit-text-fill-color: white;
+    margin-top: 0%;
+    font-size: 14px;
+    padding-top: 0px;
+    font-feature-settings: none;
+    /* margin-left: 47%; */
+    /* margin-left: 100%; */
+
+}
+
+.video-view {
+margin-left: 20%;
+}

@@ -13,6 +13,7 @@ var app = app || {};
   userView.initFeedView = (ctx, next) => {
     resetView();
     $('.logout-section').show();
+
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
@@ -71,7 +72,7 @@ var app = app || {};
     $('.signup-form input[name="username"]').val('');
     $('.signup-form input[name="password"]').val('');
 
-
+    // Show the signup form
     // Set a signup event handler on the signup button once
     $('.signup-form').one('submit', function(e) {
       e.preventDefault();
