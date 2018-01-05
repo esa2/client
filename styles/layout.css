@@ -1,118 +1,224 @@
-*, *:before *:after{
-  box-sizing: border-box
-  }
-  /* main {
-      background-image:
-          url("https://pre00.deviantart.net/490a/th/pre/f/2008/071/e/0/apple_theatre_2_by_jasonh1234.jpg");
-  } */
-  
-  nav{
+*,
+*:before *:after {
+  box-sizing: border-box;
+}
+
+nav {
   background: black;
   overflow: hidden;
   margin: 1px;
   float: right;
-  };
-  
-  div .header{
-    margin:0px;
-  }
-  .header {
+}
+
+div .header {
+  margin: 0px;
+}
+.header {
   float: left;
   color: white;
   padding: 0px;
   overflow: hidden;
   width: 100%;
   background-color: black;
-  }
-  
-  .logo{
+}
+
+.logo {
   height: 100px;
   font-size: 24px;
   line-height: 24px;
   padding: 15px;
-  }
-  .nav-h1{
-    height: 0px;
-    font-size: 50px;
-    line-height: 120px;
-    padding: 0px;
-    position: relative;
-    right: -100px;
-    color: white;
-  }
-  
-  .toggle{
-  float: right;
-  /* background: red; */
+}
+.nav-h1 {
+  height: 0px;
+  font-size: 50px;
+  line-height: 120px;
+  padding: 0px;
+  position: relative;
+  right: -100px;
   color: white;
-  border:0;
+}
+
+.toggle {
+  float: right;
+  color: white;
+  border: 0;
   font-size: 50px;
   cursor: pointer;
   display: none;
-  }
-  
-  nav a {
+}
+
+nav a {
   text-decoration: none;
   color: white;
   font-size: 25px;
-  }
-  
-  nav ul {
+}
+
+nav ul {
   float: right;
   overflow: hidden;
   color: white;
   margin: 0;
   padding: 0;
   text-align: center;
-  transition: max-height .5s;
-  }
+  transition: max-height 0.5s;
+}
 
-  .video-view {
-    margin-left: 20%;
-    }
-    
-  .video-container {
-      margin-bottom: 40px;
-  }
-  
-  .video-dmcontainer {
-      margin-bottom: 40px;
-  }
-  
-  li {
-    height: 80px;
-    padding: 20px;
-    display:inline-block;
-    margin: 1px;
-  
-  }
-  
-  li:hover{
-    background-color: crimson;
-  }
-  .signin-section{
-    margin: 10px;
-  }
-  @media (max-width: 760px){
-  .header{
+.video-view {
+  margin-left: 20%;
+}
+
+.video-container {
+  margin-bottom: 40px;
+}
+
+.video-dmcontainer {
+  margin-bottom: 40px;
+}
+
+li {
+  height: 80px;
+  padding: 20px;
+  display: inline-block;
+  margin: 1px;
+}
+
+li:hover {
+  background-color: crimson;
+}
+.signin-section {
+  padding: 120px 0;
+  font-size: 20px;
+  color: #888;
+  width: 400px;
+  font-family: "Karla";
+  margin: 0 auto;
+  text-align: center;
+}
+.signin-btn {
+  background: white;
+  color: #fff;
+  margin-right: 12px;
+  font-size: 16px;
+}
+.profile-info {
+  display: inline-block;
+  width: calc(100% / 3);
+  margin: 4% 0;
+  margin-left: calc((100% / 3) / 3);
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+.about-border {
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.biopic,
+#biopicYohanas {
+  -webkit-border-radius: 108px;
+  -moz-border-radius: 108px;
+  border-radius: 108px;
+  width: 200px;
+  height: 200px;
+  background-image: url();
+}
+
+.biopic,
+#biopicSteven {
+  -webkit-border-radius: 108px;
+  -moz-border-radius: 108px;
+  border-radius: 108px;
+  width: 200px;
+  height: 200px;
+  background-image: url();
+}
+
+.biopic,
+#biopicEd {
+  -webkit-border-radius: 108px;
+  -moz-border-radius: 108px;
+  border-radius: 108px;
+  width: 200px;
+  height: 200px;
+  background-image: url();
+}
+
+.biopic,
+#biopicCody {
+  -webkit-border-radius: 108px;
+  -moz-border-radius: 108px;
+  border-radius: 108px;
+  width: 200px;
+  height: 200px;
+  background-image: url();
+}
+
+.biopic span {
+  -webkit-border-radius: 108px;
+  -moz-border-radius: 108px;
+  border-radius: 108px;
+  width: 200px;
+  height: 200px;
+  text-indent: -5000px;
+  line-height: 200px;
+  font-family: "VT323", monospace;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 0px 2px 8px rgb(242, 210, 130);
+  color: #202020;
+  text-align: center;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  overflow: hidden;
+}
+@media (max-width: 760px) {
+  .header {
     float: none;
-    padding:0px;
+    padding: 0px;
   }
-  nav ul{
-    background:black;
+  nav ul {
+    background: black;
     max-height: 0;
     width: 100%;
     position: relative;
   }
-  nav ul.show{
+  nav ul.show {
     max-height: 20em;
   }
-  nav ul li{
+  nav ul li {
     width: 100%;
     padding: 15px;
   }
-  .toggle{
-    display:inline-block;
+  .toggle {
+    display: inline-block;
     margin: 0px;
   }
-  }
+}
+
+/* tags section styles */
+.tag {
+  color: #3e6d8e;
+  background-color: #e0eaf1;
+  border-bottom: 1px solid #b3cee1;
+  border-right: 1px solid #b3cee1;
+  padding: 3px 4px 3px 4px;
+  margin: 2px 2px 2px 0;
+  text-decoration: none;
+  font-size: 90%;
+  line-height: 2.4;
+  white-space: nowrap;
+}
+
+.tag-editor {
+  border: 1px solid black;
+}
+
+.tag:hover {
+  background-color: #c4dae9;
+  border-bottom: 1px solid #c4dae9;
+  border-right: 1px solid #c4dae9;
+  text-decoration: none;
+}

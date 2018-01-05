@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- adding animation -->
+  <div class="hide-anim" style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/A6aHBCFqlE0Rq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/the-simpsons-swag-homer-simpson-A6aHBCFqlE0Rq"></a></p>
+  <!-- adding animation -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +12,36 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
   <link rel="stylesheet" href="./styles/button.css">
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/images/favicon.ico">
   <!-- Application Templates -->
+  <!-- Error Template -->
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
-
+  <!-- YouTube video list template -->
   <script type="text/x-handlebars-template" class="video-list-template">
       <div class="video-container">
         <h3>{{title}}</h3>
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
       </div>
-    </script>
-    <script type="text/x-handlebars-template" class="video-dmlist-template">
-      <div class="video-dmcontainer">
-          <h3>{{title}}</h3>
-        <iframe frameborder="0" width="720" height="405"
-          src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
-        </iframe>
-      </div>
-      </script>
+  </script>
+  <!-- DailyMotion video list template -->
+  <script type="text/x-handlebars-template" class="video-dmlist-template">
+    <div class="video-dmcontainer">
+        <h3>{{title}}</h3>
+      <iframe frameborder="0" width="720" height="405"
+        src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
+      </iframe>
+    </div>
+  </script>
+  <!-- Interest Tag Template -->
+  <script type="text/x-handlebars-template" class="interest-tag-template">
+    <a href='#' class="tag" data-interest="{{value}}">
+      {{value}} <i class="icon-remove-sign cross"></i>
+    </a>
+  </script>
 </head>
 <body>
     <header>
@@ -49,6 +60,17 @@
   </header>
   <!-- Main section -->
   <main>
+    <!-- Interest tags section -->
+    <section class="add-interest-section content">
+      <h2>Interest Editor</h2>
+      <input type="textbox" placeholder="interests" id="interest-input"></input>
+      <button class="interest-add-btn" type="button">Add</button><br/>
+      <div class="tag-editor" contenteditable="false"></div>
+    </section>
+    <!-- Logout section -->
+    <section class="logout-section content">
+       <button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button>
+    </section>
     <!-- Sign In Form -->
     <section class="signin-section content">
       <h2>Welcome</h2>
@@ -60,7 +82,7 @@
       </form>
       <a class="sign-up" href="/client/signup"><div>Sign Up</div></a>
     </section>
-    
+
     <!-- Sign Up Form -->
     <section class="signup-section content">
       <h2>Sign Up</h2>
@@ -120,6 +142,7 @@
 
     <!-- Video View -->
     <section class="video-view content">
+      <h2 class="no-interest-msg content">Please add some interests.</h2>
       <section class="video-list">
       </section>
     </section>

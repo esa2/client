@@ -36,6 +36,22 @@ var app = app || {};
     User.interests = dbRows.map(ele => ele.search_string);
   };
 
+  User.removeInterest = interest => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/users/${User.user.username}/${interest}/search`,
+      method: 'DELETE'
+    })
+      .then(console.log)
+      .catch(errorCallback)
+  }
+
+  User.addInterest = interest => {
+    // Finally, add the new interest to the database
+    $.post(`${__API_URL__}/api/v1/users/${User.user.username}/${interest}/search`)
+      .then(console.log)
+      .catch(errorCallback);
+  }
+
   // Load a user
   User.loadIt = dbRow => {
     // nothing to load
@@ -63,6 +79,9 @@ var app = app || {};
     localStorage.removeItem('uvueUser');
     User.user = null;
     User.interests = null;
+    app.Video.all = [];
+    // Empty the interest tags
+    $('.tag-editor').empty();
   }
 
   // Validate the password
@@ -82,18 +101,14 @@ var app = app || {};
 
   // First verify, then create
   User.create = (username, arg) => {
-    if (User.user !== null) {
-      console.log('Error, this user already exists!');
-      return;
-    }
     arg.username = username;
     // Create a new user in the database
     $.post(`${__API_URL__}/api/v1/users`, arg)
       .then(() => {
         localStorage.uvueUser = JSON.stringify(username);
-        User.fetch(username);
+        User.fetch(username, null, () => page(`/client/user/${username}/feed`));
       })
-      .then(() => page(`/client/user/${username}/feed`))
+      // .then(() => page(`/client/user/${username}/feed`))
       .catch(errorCallback);
   };
 
