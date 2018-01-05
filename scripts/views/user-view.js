@@ -50,6 +50,7 @@ var app = app || {};
   userView.initSigninView = () => {
     resetView();
     $('.logout-btn').hide();
+    $('.nav-button').show();
 
     $('.signin-section').show();
     // Clear out the current signin fields
