@@ -12,10 +12,8 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
-    //testing a new nav
     $('.nav-button').show();
-
-
+    $('.logout-btn').show();
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
@@ -32,7 +30,7 @@ var app = app || {};
       console.log('No Interests! Add them now!');
       return;
     }
-
+    
     // Append all videos to the view
     $('.video-view').show()
     app.Video.all.forEach(video => {
