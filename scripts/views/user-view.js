@@ -9,6 +9,37 @@ var app = app || {};
     $('.content').hide();
   }
 
+  userView.initInterestSection = () => {
+    app.User.tags = [];
+
+    console.log('userView.initInterestSection!!!!');
+    // Event handler for adding a tag
+    $('.interest-add-btn').on('click', function (e) {
+      e.preventDefault();
+      let value = $('#interest-input').val();
+      let template = Handlebars.compile($('.interest-tag-template').text());
+
+      // either a duplicate or empty string - disallowed
+      if (app.User.tags.indexOf(value) !== -1 || value === '') {
+        return;
+      }
+
+      $('.tag-editor').append(template({'value': value}));
+      app.User.tags.push(value);
+
+      // empty out the input box
+      $('#interest-input').val('');
+    });
+
+    // Event handler for removing a tag
+    $('.interest-section').on('click', '.cross', function(e) {
+      e.preventDefault();
+      console.log('Detect delete interest click!')
+      app.User.tags.splice($(this).parent('a').html(), 1);
+      $(this).parent('a').remove();
+    });
+  }
+
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
@@ -19,6 +50,10 @@ var app = app || {};
       module.User.logout()
       page('/client');
     });
+
+    // Prep the interest section
+    $('.interest-section').show();
+    userView.initInterestSection();
     next();
   };
 
@@ -70,7 +105,6 @@ var app = app || {};
     // Clear out the current signup fields
     $('.signup-form input[name="username"]').val('');
     $('.signup-form input[name="password"]').val('');
-
 
     // Set a signup event handler on the signup button once
     $('.signup-form').one('submit', function(e) {

@@ -23,15 +23,20 @@
         <p>{{publishedDate}}</p>
         <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
       </div>
-    </script>
-    <script type="text/x-handlebars-template" class="video-dmlist-template">
-      <div class="video-dmcontainer">
-          <h3>{{title}}</h3>
-        <iframe frameborder="0" width="720" height="405"
-          src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
-        </iframe>
-      </div>
-      </script>
+  </script>
+  <script type="text/x-handlebars-template" class="video-dmlist-template">
+    <div class="video-dmcontainer">
+        <h3>{{title}}</h3>
+      <iframe frameborder="0" width="720" height="405"
+        src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
+      </iframe>
+    </div>
+  </script>
+  <script type="text/x-handlebars-template" class="interest-tag-template">
+    <a href='#' class="tag"> 
+      {{value}} <span class="cross">X</span>
+    </a>
+  </script>
 </head>
 <body>
     <header>
@@ -49,6 +54,14 @@
   </header>
   <!-- Main section -->
   <main>
+    <!-- Interest tags section -->
+    <section class="interest-section content">
+      <h2>Create tags:</h2>
+      <input type="textbox" placeholder="interests" id="interest-input"></input>
+      <button class="interest-add-btn" type="button">Add</button><br/>
+      <div class="tag-editor" contenteditable="false"></div>
+    </section>
+    <!-- Logout section -->
     <section class="logout-section content">
        <button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button>
     </section>
