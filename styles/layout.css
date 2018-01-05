@@ -91,7 +91,18 @@
     background-color: crimson;
   }
   .signin-section{
-    margin: 10px;
+    padding:120px 0;
+    font-size:62px;
+    color:#888;
+    width:400px;
+    font-family:'Karla';
+    margin:0 auto;
+    text-align:center;
+  }
+  .signin-btn{
+    background:#a0a0a0;
+    color:#fff;
+    float:right;
   }
   @media (max-width: 760px){
   .header{
