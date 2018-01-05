@@ -21,10 +21,15 @@ var __API_URL__ = 'http://localhost:3000';
 
   Video.all = [];
   Video.findYtByInterests = (ctx, next) => {
+    // Can't find videos when the user has no interests
+    if (module.User.interests.length === 0) return;
+
     let vids = module.User.interests.map(interest => $.get(`${__API_URL__}/api/v3/videos/search`, {'search': interest}))
 
     $.when.apply($, vids).then(function() {
       Video.all = [];
+      console.log('Youtube arguments');
+      console.log(arguments);
       // process the raw videos from the args object
       for (let i = 0; i < arguments.length; i++) {
         arguments[i][2].responseJSON.items.forEach(ele => {
@@ -41,10 +46,14 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Video.findDmByInterests = (ctx, next) => {
+    // Can't find videos when the user has no interests
+    if (module.User.interests.length === 0) return;
+
     let vids = module.User.interests.map(interest => $.get(`${__API_URL__}/api/dailymotion/videos/search`, { 'search': interest }))
 
     $.when.apply($, vids).then(function() {
-      console.log(arguments)
+      console.log('DailyMotion arguments');
+      console.log(arguments);
       for (let i = 0; i < arguments.length; i++) {
         arguments[i][0].list.forEach(ele => {
           Video.all.push({

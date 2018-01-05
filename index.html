@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
   <link rel="stylesheet" href="./styles/button.css">
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/images/favicon.ico">
   <!-- Application Templates -->
   <!-- Error Template -->
@@ -39,7 +39,7 @@
   <!-- Interest Tag Template -->
   <script type="text/x-handlebars-template" class="interest-tag-template">
     <a href='#' class="tag" data-interest="{{value}}">
-      {{value}} <span class="cross">X</span>
+      {{value}} <i class="icon-remove-sign cross"></i>
     </a>
   </script>
 </head>
@@ -142,6 +142,7 @@
 
     <!-- Video View -->
     <section class="video-view content">
+      <h2 class="no-interest-msg content">Please add some interests.</h2>
       <section class="video-list">
       </section>
     </section>

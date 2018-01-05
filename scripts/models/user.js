@@ -79,6 +79,9 @@ var app = app || {};
     localStorage.removeItem('uvueUser');
     User.user = null;
     User.interests = null;
+    app.Video.all = [];
+    // Empty the interest tags
+    $('.tag-editor').empty();
   }
 
   // Validate the password
@@ -98,18 +101,14 @@ var app = app || {};
 
   // First verify, then create
   User.create = (username, arg) => {
-    if (User.user !== null) {
-      console.log('Error, this user already exists!');
-      return;
-    }
     arg.username = username;
     // Create a new user in the database
     $.post(`${__API_URL__}/api/v1/users`, arg)
       .then(() => {
         localStorage.uvueUser = JSON.stringify(username);
-        User.fetch(username);
+        User.fetch(username, null, () => page(`/client/user/${username}/feed`));
       })
-      .then(() => page(`/client/user/${username}/feed`))
+      // .then(() => page(`/client/user/${username}/feed`))
       .catch(errorCallback);
   };
 

@@ -68,7 +68,7 @@ var app = app || {};
 
     $('.nav-button').show();
     $('.logout-btn').show();
-    $('.logout-btn').one('click', function(event){
+    $('.logout-btn').on('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
       module.User.logout()
@@ -83,9 +83,10 @@ var app = app || {};
 
   // Show video list
   userView.initVideoList = () => {
+    $('.video-list').empty();
     // If no videos were found, the user needs to add more interests
     if (app.Video.all.length === 0) {
-      console.log('No Interests! Add them now!');
+      $('.no-interest-msg').show();
       return;
     }
 
@@ -110,7 +111,6 @@ var app = app || {};
       $("#wait").css("display", "block");
     });
     $(document).ajaxComplete(function(){
-      // $(".giphy-embed").css("display", "none");
       $(".hide-anim").hide();
     });
 
@@ -125,7 +125,7 @@ var app = app || {};
     $('.signin-form input[name="password"]').val('');
 
     // Set a signin event handler on the signin button once
-    $('.signin-form').one('submit', function(e) {
+    $('.signin-form').on('submit', function(e) {
       e.preventDefault();
       let username = e.target.username.value;
       let password = e.target.password.value;
@@ -144,15 +144,15 @@ var app = app || {};
     $('.signup-form input[name="password"]').val('');
 
     // Set a signup event handler on the signup button once
-    $('.signup-form').one('submit', function(e) {
+    $('.signup-form').on('submit', function(e) {
       e.preventDefault();
       let realname = e.target.realname.value;
       let username = e.target.username.value;
       let password = e.target.password.value;
-      module.User.fetch(username, {
+      module.User.create(username, {
         'realname': realname,
-        'password': password
-      }, module.User.create);
+        'password': password,
+      })
     });
   };
 
