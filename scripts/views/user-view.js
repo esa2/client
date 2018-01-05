@@ -13,6 +13,7 @@ var app = app || {};
   userView.initFeedView = (ctx, next) => {
     resetView();
     $('.logout-section').show();
+
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
       // Remove logged in user for localstorage
