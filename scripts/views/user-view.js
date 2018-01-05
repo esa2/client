@@ -10,7 +10,11 @@ var app = app || {};
   }
 
   userView.initAddInterestSection = () => {
-    app.User.tags = [];
+    // Populate interest tag editor with current interests
+    app.User.interests.map(ele => {
+      let template = Handlebars.compile($('.interest-tag-template').text());
+      $('.tag-editor').append(template({'value': ele}));
+    })
 
     // Event handler for adding a tag
     $('.interest-add-btn').on('click', function (e) {
@@ -19,25 +23,31 @@ var app = app || {};
       let template = Handlebars.compile($('.interest-tag-template').text());
 
       // either a duplicate or empty string - disallowed
-      if (app.User.tags.indexOf(value) !== -1 || value === '') {
+      if (app.User.interests.indexOf(value) !== -1 || value === '') {
         return;
       }
 
-      $('.tag-editor').append(template({'value': value}));
-      app.User.tags.push(value);
-
       // empty out the input box
       $('#interest-input').val('');
+      // Append a new tag to the tag editor box
+      $('.tag-editor').append(template({'value': value}));
+      // Add the tag to the interests array
+      app.User.interests.push(value);
+      // Add interest to the db
+      app.User.addInterest(value);
     });
 
     // Event handler for removing a tag
-    $('.interest-section').on('click', '.cross', function(e) {
+    $('.add-interest-section').on('click', '.cross', function(e) {
       e.preventDefault();
+      let interest = $(this).parent('a').attr('data-interest');
       // Extract the index of the tag to remove
-      let idx = app.User.tags.indexOf($(this).parent('a').attr('data-tagname'));
+      let idx = app.User.interests.indexOf(interest);
       // do it
-      app.User.tags.splice(idx, 1);
+      app.User.interests.splice(idx, 1);
       $(this).parent('a').remove();
+      // Remove interest from the db
+      app.User.removeInterest(interest);
     });
   }
 
@@ -66,8 +76,8 @@ var app = app || {};
     });
 
     // Prep the interest section
-    $('.interest-section').show();
-    userView.initInterestSection();
+    $('.add-interest-section').show();
+    userView.initAddInterestSection();
     next();
   };
 
