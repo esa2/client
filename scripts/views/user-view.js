@@ -100,6 +100,11 @@ var app = app || {};
     }
   };
 
+  userView.initAboutPage = function () {
+    resetView();
+    $('.about_us-section').show();
+  };
+
   $(document).ready(function(){
     $('.toggle').on('click', function(){
       $('nav ul').toggleClass('show');
