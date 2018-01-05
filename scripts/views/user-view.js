@@ -73,12 +73,6 @@ var app = app || {};
     $('.signup-form input[name="password"]').val('');
 
     // Show the signup form
-    $('.signup-section').show();
-    $('.logout-btn').hide();
-    $('.signin-btn').hide();
-    // $('.search-btn').hide(); COMMENTED OUT IN INDEX.HTML
-
-
     // Set a signup event handler on the signup button once
     $('.signup-form').one('submit', function(e) {
       e.preventDefault();
