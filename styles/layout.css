@@ -1,11 +1,6 @@
 *, *:before *:after{
   box-sizing: border-box
-  }
-  /* main {
-      background-image:
-          url("https://pre00.deviantart.net/490a/th/pre/f/2008/071/e/0/apple_theatre_2_by_jasonh1234.jpg");
-  } */
-  
+  }  
   nav{
   background: black;
   overflow: hidden;
@@ -92,7 +87,7 @@
   }
   .signin-section{
     padding:120px 0;
-    font-size:62px;
+    font-size: 20px;
     color:#888;
     width:400px;
     font-family:'Karla';
@@ -100,9 +95,80 @@
     text-align:center;
   }
   .signin-btn{
-    background:#a0a0a0;
+    background:white;
     color:#fff;
-    float:right;
+    margin-right: 12px;
+    font-size: 16px;
+  }
+  .profile-info {
+    display: inline-block;
+    width: calc(100% / 3);
+    margin: 4% 0;
+    margin-left: calc((100% / 3) / 3);
+    color: black;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+   .about-border {
+    border-top: 2px solid rgba(0, 0, 0, .2);
+  } 
+  
+  .biopic, #biopicYohanas {
+    -webkit-border-radius: 108px;
+    -moz-border-radius: 108px;
+    border-radius: 108px;
+    width: 200px;
+    height: 200px;
+    background-image: url();
+  }
+  
+  .biopic, #biopicSteven {
+    -webkit-border-radius: 108px;
+    -moz-border-radius: 108px;
+    border-radius: 108px;
+    width: 200px;
+    height: 200px;
+    background-image: url();
+  }
+  
+  .biopic, #biopicEd {
+    -webkit-border-radius: 108px;
+    -moz-border-radius: 108px;
+    border-radius: 108px;
+    width: 200px;
+    height: 200px;
+    background-image: url();
+  }
+  
+  .biopic, #biopicCody {
+    -webkit-border-radius: 108px;
+    -moz-border-radius: 108px;
+    border-radius: 108px;
+    width: 200px;
+    height: 200px;
+    background-image: url();
+  }
+  
+  .biopic span {
+    -webkit-border-radius: 108px;
+    -moz-border-radius: 108px;
+    border-radius: 108px;
+    width: 200px;
+    height: 200px;
+    text-indent: -5000px;
+    line-height: 200px;
+    font-family: 'VT323', monospace;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 0px 2px 8px rgb(242, 210, 130);
+    color: #202020;
+    text-align: center;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    overflow: hidden;
   }
   @media (max-width: 760px){
   .header{
