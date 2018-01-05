@@ -18,7 +18,7 @@ var app = app || {};
       event.preventDefault();
       // Remove logged in user for localstorage
       module.User.logout()
-      page('/');
+      page('/client');
     });
     next();
   };
@@ -98,9 +98,9 @@ var app = app || {};
       console.log(`Found a logged in user ${localStorage.uvueUser}`)
       // If their was a user logged in previously, try to fetch the user
       module.User.fetch(JSON.parse(localStorage.uvueUser), null,
-        () => page(`/user/${JSON.parse(localStorage.uvueUser)}/feed`));
+        () => page(`/client/user/${JSON.parse(localStorage.uvueUser)}/feed`));
     } else {
-      page('/signin');
+      page('/client/signin');
     }
   };
 
