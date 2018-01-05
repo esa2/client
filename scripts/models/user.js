@@ -76,7 +76,7 @@ var app = app || {};
       console.log('Successfully logged in!');
       // Store username in localStorage for persistence of login
       localStorage.uvueUser = JSON.stringify(User.user.username);
-      page(`/user/${User.user.username}/feed`);
+      page(`/client/user/${User.user.username}/feed`);
     }
   };
 
@@ -93,7 +93,7 @@ var app = app || {};
         localStorage.uvueUser = JSON.stringify(username);
         User.fetch(username);
       })
-      .then(() => page(`/user/${username}/feed`))
+      .then(() => page(`/client/user/${username}/feed`))
       .catch(errorCallback);
   };
 

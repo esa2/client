@@ -1,5 +1,7 @@
 'use strict';
 
+page.base('/client')
+
 page('/', app.userView.initIndexPage);
 page('/signin', app.userView.initSigninView);
 page('/signup', app.userView.initSignupView);
