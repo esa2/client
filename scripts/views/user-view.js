@@ -12,7 +12,8 @@ var app = app || {};
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView();
-    $('.logout-section').show();
+    $('.logout-btn').show();
+
 
     $('.logout-btn').one('click', function(event){
       event.preventDefault();
@@ -47,8 +48,9 @@ var app = app || {};
   // Show the Signin view
   userView.initSigninView = () => {
     resetView();
-    $('.signin-section').show();
+    $('.logout-btn').hide();
 
+    $('.signin-section').show();
     // Clear out the current signin fields
     $('.signin-form input[name="username"]').val('');
     $('.signin-form input[name="password"]').val('');

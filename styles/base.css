@@ -53,7 +53,7 @@ button {
     margin-top: 0%;
     font-size: 14px;
     padding-top: 0px;
-    font-feature-settings: none;
+    letter-spacing: 1px;
     /* margin-left: 47%; */
     /* margin-left: 100%; */
 
@@ -62,3 +62,4 @@ button {
 .video-view {
 margin-left: 20%;
 }
+
