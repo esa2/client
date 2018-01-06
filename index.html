@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- adding animation -->
-  <div class="hide-anim" style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/A6aHBCFqlE0Rq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/the-simpsons-swag-homer-simpson-A6aHBCFqlE0Rq"></a></p>
-  <!-- adding animation -->
+<html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>301-Project</title>
+  <title>uVue Video</title>
   <link rel="stylesheet" href="./styles/reset.css">
   <link rel="stylesheet" href="./styles/base.css">
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
-  <link rel="stylesheet" href="./styles/button.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/images/favicon.ico">
-  <!-- Application Templates -->
   <!-- Error Template -->
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
@@ -43,121 +39,79 @@
     </a>
   </script>
 </head>
+
 <body>
-    <header>
-        <div class="header">
-          <h1 class="nav-h1">uVue</h1>
-            <a href="/"><img class="logo" src="images/logo.png" alt="site logo image of a movie camera" alt="logo"></a>
-              <button class="toggle">☰</button>
-       <nav>
-         <ul class="nav-button content">
-            <li><button  class="nav-button" data-hover="go home" type="button"><a href="/">home</a></button></li>
-          <li><button data-hover="Dev Bio" class="nav-button" type="button"><a href="/client/about">about</a></button></li>
-          <li class="logout-btn"><button data-hover="Comeback Soon" class="nav-button"  type="button"><a href="/"  >Logout</a></button></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- Main section -->
-  <main>
-    <!-- Interest tags section -->
-    <section class="add-interest-section content">
-      <h2>Interest Editor</h2>
-      <input type="textbox" placeholder="interests" id="interest-input"></input>
-      <button class="interest-add-btn" type="button">Add</button>
-      <button class="interest-view-btn" type="button"><a href="/"></a>View</button>
-      <div class="tag-editor" contenteditable="false"></div>
-    </section>
-    <!-- Logout section -->
-    <section class="logout-section content">
-       <button data-hover="Comeback Soon" class="logout-btn" type="button"><div>Logout</div></button>
-    </section>
-    <!-- Sign In Form -->
-    <section class="signin-section content">
-      <h2>Welcome</h2>
-      <form class="signin-form">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <!-- style button -->
-        <button data-hover="Welcome Back!" class="signin-btn" type="submit"><div>Sign In</div></button>
-      </form>
-      <a class="sign-up" href="/client/signup"><div>Sign Up</div></a>
-    </section>
-
-    <!-- Sign Up Form -->
-    <section class="signup-section content">
-      <h2>Sign Up</h2>
-      <form class="signup-form">
-        <input type="text" name="realname" placeholder="Full Name" required>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button data-hover="Join the Team" class="signup-btn" type="submit"><div>Sign Up</div></button>
-      </form>
-    </section>
-
-    <!-- About Us -->
-    <section class="about_us-section content">
-      <div class="about_app">
-        <h2>About uVue</h2>
-        <p>uVue is a video aggregating app that will allow users to create an account and add interests to their account. It will then make API calls to the YouTube API and the DailyMotion API and populate a video feed with a list of videos from both sources.</p>
-      </div>
-      <div class="about_app">
-        <h2>About Us</h2>
-        <section class="profile-info">
-            <div class="biopic" id="biopicYohanas">
-            <span>Yohanas</span>
-            </div>
-          </section>
-          <section class="profile-info">
-            <p class="about-info">My name is Yohanes Demissie. I recently graduated with a degree in psychology. I really like visual arts and technology and love how javascript implements the two. I love the limitless potential possibilities in development using javascript which brings me to Code Fellows</p>
-          </section>
-          <section class="about-border"></section>
-          <section class="profile-info">
-            <div class="biopic" id="biopicSteven">
-            <span>Steven</span>
-            </div>
-          </section>
-          <section class="profile-info">
-            <p class="about-info">Steve is a believer in all that is technology. He used to develop C and Python, but decided he wanted to start doing web development and joined Code Fellows. His hobbies include cycling, mechanical keybaords, hiking, and arch linux.</p>
-          </section>
-          <section class="about-border"></section>
-          <section class="profile-info">
-            <div class="biopic" id="biopicEd">
-            <span>Ed</span>
-          </div>
-          </section>
-          <section class= "profile-info">
-            <p class="about-info">I like rocks, motorcycles, kids, dogs and cats, not necessarily in that order. I prefer meteorites but all rocks have a story to tell. I am an Air Force vet, have worked as a fry cook, EMT, mechanic, programmer,  janitor, kindergarten aide and bartender. Did I mention I like rocks?</p>
-          </section>
-          <section class= "about-border"></section>
-          <section class= "profile-info">
-            <div class="biopic" id="biopicCody">
-            <span>Cody</span>
-           </div>
-          </section>
-          <section class= "profile-info">
-            <p class="about-info">Graduate from high school last year, took some time of to find out what I wanted to do. Code fellows was recommended to me and I decided to try it out with my brother and sister, and now try to make this my career.</p>
-          </section>
-      </div>
-    </section>
-
-    <!-- Video View -->
-    <section class="video-view content">
-      <h2 class="no-interest-msg content">Please add some interests.</h2>
-      <section class="video-list">
+  <div class="wrapper">
+    <header class="header">
+      <h1>uvue video</h1>
+    </header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a class="logout-btn" href="">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <aside class="side">
+      <section class="add-interest-section content">
+        <h2>Interest Editor</h2>
+        <input type="textbox" placeholder="interests" id="interest-input">
+        <button class="interest-add-btn" type="button">Add interest</button>
+        <button class="interest-view-btn" type="button"><a href="">View videos</a></button>
+        <div class="tag-editor" contenteditable="false"></div>
       </section>
-    </section>
+    </aside>
+    <!-- Main section -->
+    <main>
+      <div class="content-area">
+        <!-- Interest tags section -->
 
-    <!-- Error View -->
-    <section class="error-view content">
-      <h2 class="view-title">Ya din done something wrong.</h2>
-      <section id="error-message"></section>
-    </section>
-  </main>
+        <!-- Sign In Form -->
+        <section class="signin-section content">
+          <h2>Welcome</h2>
+          <form class="signin-form">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign in</button>
+            <!-- style button -->
+          </form>
+          <a class="sign-up" href="/client/signup">Sign Up</a>
+        </section>
 
-  <footer>
-    <p>&copy; 2017 uVue.com<p>
-  </footer>
+        <!-- Sign Up Form -->
+        <section class="signup-section content">
+          <h2>Sign Up</h2>
+          <form class="signup-form">
+            <input type="text" name="realname" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button class="signup-btn" type="submit">Sign Up</button>
+          </form>
+        </section>
+
+        <!-- Video View -->
+        <section class="video-view content">
+          <h2 class="no-interest-msg content">Please add some interests.</h2>
+          <section class="video-list">
+          </section>
+        </section>
+
+        <!-- Error View -->
+        <section class="error-view content">
+          <h2 class="view-title">Ya din done something wrong.</h2>
+          <section id="error-message"></section>
+        </section>
+      </div>
+
+    </main>
+    <footer class="footer">
+      <p>&copy; 2018 uVueVideo.com
+        <p>
+    </footer>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
@@ -167,4 +121,5 @@
   <script type="text/javascript" src="./scripts/views/routes.js"></script>
   <script type="text/javascript" src="./scripts/views/error-view.js"></script>
 </body>
+
 </html>
