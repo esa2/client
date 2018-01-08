@@ -46,16 +46,24 @@ var __API_URL__ = 'http://localhost:3000'
     if (module.User.interests.length === 0) return
     let vids = module.User.interests.map(interest => $.get(`${__API_URL__}/api/dailymotion/videos/search`, { 'search': interest }))
     $.when.apply($, vids).then(function() {
-      console.log('DailyMotion arguments')
-      console.log(arguments)
-      for (let i = 0; i < arguments.length; i++) {
-        arguments[i][0].list.forEach(ele => {
+      if (module.User.interests.length === 1) {
+        arguments[0].list.map(ele => {
           Video.all.push({
             'source' : 'dailymotion',
             'videoId' : ele.id,
             'title' : ele.title
           })
         })
+      } else {
+        for (let i = 0; i < arguments.length; i++) {
+          arguments[i][0].list.map(ele => {
+            Video.all.push({
+              'source' : 'dailymotion',
+              'videoId' : ele.id,
+              'title' : ele.title
+            })
+          })
+        }
       }
     })
       .then(next)
