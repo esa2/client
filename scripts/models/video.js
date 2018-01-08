@@ -25,17 +25,25 @@ var __API_URL__ = 'http://localhost:3000'
     let vids = module.User.interests.map(interest => $.get(`${__API_URL__}/api/v3/videos/search`, {'search': interest}))
     $.when.apply($, vids).then(function() {
       Video.all = []
-      console.log('Youtube arguments')
-      console.log(arguments)
       // process the raw videos from the args object
-      for (let i = 0; i < arguments.length; i++) {
-        arguments[i][2].responseJSON.items.forEach(ele => {
+      if (module.User.interests.length === 1) {
+        arguments[0].items.map(ele => {
           Video.all.push({
             'source' : 'youtube',
             'videoId' : ele.id.videoId,
             'title' : ele.snippet.title
           })
         })
+      } else {
+        for (let i = 0; i < arguments.length; i++) {
+          arguments[i][0].items.forEach(ele => {
+            Video.all.push({
+              'source' : 'youtube',
+              'videoId' : ele.id.videoId,
+              'title' : ele.snippet.title
+            })
+          })
+        }
       }
     })
       .then(next)
