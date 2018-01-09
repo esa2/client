@@ -14,11 +14,6 @@ var __API_URL__ = 'http://localhost:3000'
     Object.keys(VideoObj).forEach(key => this[key] = VideoObj[key])
   }
 
-  Video.prototype.toHtml = function() {
-    let template = Handlebars.compile($('.video-list-template').text())
-    return template(this)
-  }
-
   Video.all = []
   Video.findYtByInterests = (ctx, next) => {
     if (module.User.interests.length === 0) return
@@ -31,16 +26,19 @@ var __API_URL__ = 'http://localhost:3000'
           Video.all.push({
             'source' : 'youtube',
             'videoId' : ele.id.videoId,
-            'title' : ele.snippet.title
+            'title' : ele.snippet.title,
+            'thumbnail' : ele.snippet.thumbnails.medium.url
           })
         })
       } else {
         for (let i = 0; i < arguments.length; i++) {
+          //console.log(arguments[i][0].items[i].snippet.thumbnails.medium.url)
           arguments[i][0].items.forEach(ele => {
             Video.all.push({
               'source' : 'youtube',
               'videoId' : ele.id.videoId,
-              'title' : ele.snippet.title
+              'title' : ele.snippet.title,
+              'thumbnail' : ele.snippet.thumbnails.medium.url
             })
           })
         }
@@ -64,6 +62,8 @@ var __API_URL__ = 'http://localhost:3000'
         })
       } else {
         for (let i = 0; i < arguments.length; i++) {
+          console.log(arguments)
+          //console.log(arguments[i][0].list)
           arguments[i][0].list.map(ele => {
             Video.all.push({
               'source' : 'dailymotion',

@@ -75,15 +75,20 @@ var app = app || {}
     }
 
     // Append all videos to the view
+    $('.thumb-view').show()
     $('.video-view').show()
     app.Video.all.forEach(video => {
-      let template
+      let templateThumb
+      let templateVideo
       if (video.source === 'youtube') {
-        template = Handlebars.compile($('.video-list-template').text())
+        templateThumb = Handlebars.compile($('.yt-thumb-template').text())
+        templateVideo = Handlebars.compile($('.yt-list-template').text())
       } else {
-        template = Handlebars.compile($('.video-dmlist-template').text())
+        templateThumb = Handlebars.compile($('.dm-thumb-template').text())
+        templateVideo = Handlebars.compile($('.dm-list-template').text())
       }
-      $('.video-list').append(template(video))
+      $('.thumb-list').append(templateThumb(video))
+      $('.video-list').append(templateVideo(video))
     })
   }
 
