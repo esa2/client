@@ -72,13 +72,13 @@
     <aside class="side">
       <section class="add-interest-section content">
         <h2>Interest Editor</h2>
+        <div class="tag-editor" contenteditable="false"></div>
         <input type="textbox" placeholder="interests" id="interest-input">
         <button class="interest-add-btn" type="button">Add interest</button>
-        <div class="tag-editor" contenteditable="false"></div>
-        <button class="interest-view-btn" type="button">
-          <a href="">View videos</a>
-        </button>
       </section>
+      <button class="interest-view-btn" type="button">
+        <a href="">View videos</a>
+      </button>
     </aside>
     <!-- Main section -->
     <main>
@@ -101,26 +101,38 @@
         <section class="signup-section content">
           <h2>Sign Up</h2>
           <form class="signup-form">
-            <input type="text" name="realname" placeholder="Full Name" required>
+            <input type="text" name="realname" placeholder="email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button class="signup-btn" type="submit">Sign Up</button>
           </form>
         </section>
 
-        <!-- Tumbnail View -->
-        <section class="thumb-view content">
-            <h2 class="no-interest-msg content">Please add some interests.</h2>
-            <section class="thumb-list">
+        <!-- Youtube Tumbnail View -->
+        <section class="yt-thumb-view content">
+          <h2>YouTube videos</h2>
+            <section class="yt-thumb-list">
             </section>
           </section>
 
-        <!-- Video View -->
-        <section class="video-view content">
-          <h2 class="no-interest-msg content">Please add some interests.</h2>
-          <section class="video-list">
+        <!-- YouTube Video View -->
+        <section class="yt-video-view content">
+          <section class="yt-video-list">
           </section>
         </section>
+
+        <!-- Dailymotion Tumbnail View -->
+        <section class="dm-thumb-view content">
+          <h2>Daily Motion videos</h2>
+          <section class="dm-thumb-list">
+          </section>
+        </section>
+
+      <!-- DailyMotion Video View -->
+      <section class="dm-video-view content">
+        <section class="dm-video-list">
+        </section>
+      </section>
 
         <!-- Error View -->
         <section class="error-view content">
