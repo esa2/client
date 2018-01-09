@@ -19,7 +19,6 @@
   <!-- YouTube thumbnail list template -->
   <script type="text/x-handlebars-template" class="yt-thumb-template">
       <div class="thumb-container">
-        <h2>YouTube</h2>
         <img src="{{thumbnail}}">
         <h3>{{title}}</h3>
       </div>
@@ -34,7 +33,6 @@
    <!-- DailyMotion thumbnail list template -->
    <script type="text/x-handlebars-template" class="dm-thumb-template">
     <div class="thumb-container">
-      <h2>Daily Motion</h2>
       <img src="//www.dailymotion.com/thumbnail/video/{{videoId}}">
       <h3>{{title}}</h3>
     </div>
@@ -43,7 +41,7 @@
   <script type="text/x-handlebars-template" class="dm-list-template">
     <div class="video-dmcontainer">
         <h3>{{title}}</h3>
-      <iframe frameborder="0" width="304" height="167"
+      <iframe frameborder="0" width="720" height="405"
         src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
       </iframe>
     </div>
@@ -76,10 +74,10 @@
         <h2>Interest Editor</h2>
         <input type="textbox" placeholder="interests" id="interest-input">
         <button class="interest-add-btn" type="button">Add interest</button>
+        <div class="tag-editor" contenteditable="false"></div>
         <button class="interest-view-btn" type="button">
           <a href="">View videos</a>
         </button>
-        <div class="tag-editor" contenteditable="false"></div>
       </section>
     </aside>
     <!-- Main section -->
