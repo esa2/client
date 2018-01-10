@@ -70,11 +70,11 @@ var app = app || {}
       $('.no-interest-msg').show()
       return
     }
+    $('.allvideo').empty()
     let templateThumb
     let templateVideo
-
     // Append all videos to the view
-    app.Video.all.map(video => {  
+    app.Video.all.map(video => {
       if (video.source === 'youtube') {
         $('.yt-thumb-view').show()
         $('.yt-video-view').show()
@@ -136,7 +136,8 @@ var app = app || {}
   }
 
   $('.view-videos-button').on('click', function() {
-    $('.allvideo').empty()
+    // Clear video array to prevent duplicates
+    app.Video.all = []
     page('/client')
   })
 

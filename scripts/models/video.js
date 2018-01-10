@@ -13,13 +13,11 @@ var __API_URL__ = 'http://localhost:3000'
   function Video(VideoObj) {
     Object.keys(VideoObj).forEach(key => this[key] = VideoObj[key])
   }
-
   Video.all = []
   Video.findYtByInterests = (ctx, next) => {
     if (module.User.interests.length === 0) return
     let vids = module.User.interests.map(interest => $.get(`${__API_URL__}/api/v3/videos/search`, {'search': interest}))
     $.when.apply($, vids).then(function() {
-      Video.all = []
       // process the raw videos from the args object
       if (module.User.interests.length === 1) {
         arguments[0].items.map(ele => {
@@ -62,7 +60,6 @@ var __API_URL__ = 'http://localhost:3000'
         })
       } else {
         for (let i = 0; i < arguments.length; i++) {
-          console.log(arguments)
           //console.log(arguments[i][0].list)
           arguments[i][0].list.map(ele => {
             Video.all.push({

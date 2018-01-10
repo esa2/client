@@ -56,7 +56,6 @@ var app = app || {}
   User.loadIt = dbRow => {
     // nothing to load
     if (!dbRow.length) return
-    console.log('dbRow:', dbRow)
     // Only one user should ever be returned
     User.user = new User(dbRow[0])
   }
