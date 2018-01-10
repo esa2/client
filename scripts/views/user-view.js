@@ -77,14 +77,14 @@ var app = app || {}
     app.Video.all.map(video => {
       if (video.source === 'youtube') {
         $('.yt-thumb-view').show()
-        $('.yt-video-view').show()
+        //$('.yt-video-view').show()
         templateThumb = Handlebars.compile($('.yt-thumb-template').text())
         templateVideo = Handlebars.compile($('.yt-list-template').text())
         $('.yt-thumb-list').append(templateThumb(video))
         $('.yt-video-list').append(templateVideo(video))
       } else {
         $('.dm-thumb-view').show()
-        $('.dm-video-view').show()
+        //$('.dm-video-view').show()
         templateThumb = Handlebars.compile($('.dm-thumb-template').text())
         templateVideo = Handlebars.compile($('.dm-list-template').text())
         $('.dm-thumb-list').append(templateThumb(video))

@@ -18,7 +18,7 @@
   </script>
   <!-- YouTube thumbnail list template -->
   <script type="text/x-handlebars-template" class="yt-thumb-template">
-      <div class="thumb-container">
+      <div class="thumb-container" data-videoid={{videoId}}>
         <img src="{{thumbnail}}">
         <h3>{{title}}</h3>
       </div>
@@ -27,13 +27,13 @@
   <script type="text/x-handlebars-template" class="yt-list-template">
       <div class="video-container">
         <h3>{{title}}</h3>
-        <iframe id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
+        <iframe type="text/html" width="720" height="405" frameborder="0" src="https://www.youtube.com/embed/{{videoId}}" allowfullscreen></iframe>
       </div>
   </script>
    <!-- DailyMotion thumbnail list template -->
    <script type="text/x-handlebars-template" class="dm-thumb-template">
-    <div class="thumb-container">
-      <img src="//www.dailymotion.com/thumbnail/video/{{videoId}}">
+    <div class="thumb-container" data-videoid={{videoId}}>
+      <img class="dm-thumbnail" src="//www.dailymotion.com/thumbnail/video/{{videoId}}">
       <h3>{{title}}</h3>
     </div>
 </script>
@@ -41,9 +41,7 @@
   <script type="text/x-handlebars-template" class="dm-list-template">
     <div class="video-dmcontainer">
         <h3>{{title}}</h3>
-      <iframe frameborder="0" width="720" height="405"
-        src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen>
-      </iframe>
+      <iframe width="720" height="405" frameborder="0" src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen></iframe>
     </div>
   </script>
   <!-- Interest Tag Template -->

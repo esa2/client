@@ -76,12 +76,17 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   display: block;
 }
 
-  input {
-  width: 250px;
-  padding: 12px 0 12px 4px;
-  margin: 8px 0;
-  font-size: 16px;
-  display: block;
+input {
+width: 250px;
+padding: 12px 0 12px 4px;
+margin: 8px 0;
+font-size: 16px;
+display: block;
+}
+
+.dm-thumbnail {
+  height: 180px;
+  width: 320px;
 }
 
 @media (min-width: 700px) {
