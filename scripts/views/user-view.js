@@ -21,7 +21,6 @@ var app = app || {}
   userView.initSigninView = () => {
     resetView()
     $('.logout-btn').hide()
-    $('.nav-button').show()
     $('.signin-section').show()
     $('.signin-form input[name="username"]').val('')
     $('.signin-form input[name="password"]').val('')
@@ -53,7 +52,6 @@ var app = app || {}
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
     resetView()
-    $('.nav-button').show()
     $('.logout-btn').show()
     $('.logout-btn').on('click', function(event){
       event.preventDefault()
@@ -68,16 +66,15 @@ var app = app || {}
 
   // Show video list
   userView.initVideoList = () => {
-    $('.video-list').empty()
     if (app.Video.all.length === 0) {
       $('.no-interest-msg').show()
       return
     }
+    let templateThumb
+    let templateVideo
 
     // Append all videos to the view
-    app.Video.all.forEach(video => {
-      let templateThumb
-      let templateVideo
+    app.Video.all.map(video => {  
       if (video.source === 'youtube') {
         $('.yt-thumb-view').show()
         $('.yt-video-view').show()
@@ -138,17 +135,21 @@ var app = app || {}
     })
   }
 
-  userView.initAboutPage = function () {
-    resetView()
-    $('.about_us-section').show()
-    $('.nav-button').show()
-  }
-
-  $(document).ready(function(){
-    $('.toggle').on('click', function(){
-      $('nav ul').toggleClass('show')
-    })
+  $('.view-videos-button').on('click', function() {
+    $('.allvideo').empty()
+    page('/client')
   })
+
+  // userView.initAboutPage = function () {
+  //   resetView()
+  //   $('.about_us-section').show()
+  // }
+
+  // $(document).ready(function(){
+  //   $('.toggle').on('click', function(){
+  //     $('nav ul').toggleClass('show')
+  //   })
+  // })
 
   module.userView = userView
 })(app)
