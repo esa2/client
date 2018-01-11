@@ -25,7 +25,7 @@
   </script>
   <!-- YouTube video list template -->
   <script type="text/x-handlebars-template" class="yt-list-template">
-      <div class="video-container">
+      <div class="video-{{videoId}} videodiv">
         <h3>{{title}}</h3>
         <iframe type="text/html" width="720" height="405" frameborder="0" src="https://www.youtube.com/embed/{{videoId}}" allowfullscreen></iframe>
       </div>
@@ -39,7 +39,7 @@
 </script>
   <!-- DailyMotion video list template -->
   <script type="text/x-handlebars-template" class="dm-list-template">
-    <div class="video-dmcontainer">
+    <div class="video-{{videoId}} videodiv">
         <h3>{{title}}</h3>
       <iframe width="720" height="405" frameborder="0" src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen></iframe>
     </div>
@@ -111,7 +111,7 @@
           </section>
 
         <!-- YouTube Video View -->
-        <section class="yt-video-view content">
+        <section class="video-view content">
           <section class="yt-video-list allvideo">
           </section>
         </section>
@@ -124,7 +124,7 @@
         </section>
 
       <!-- DailyMotion Video View -->
-      <section class="dm-video-view content">
+      <section class="video-view content">
         <section class="dm-video-list allvideo">
         </section>
       </section>
