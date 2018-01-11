@@ -75,22 +75,22 @@ var app = app || {}
     let templateVideo
     // Append all videos to the view
     app.Video.all.map(video => {
+      $('.thumb-view').show()
       if (video.source === 'youtube') {
-        $('.yt-thumb-view').show()
         templateThumb = Handlebars.compile($('.yt-thumb-template').text())
         templateVideo = Handlebars.compile($('.yt-list-template').text())
         $('.yt-thumb-list').append(templateThumb(video))
-        $('.yt-video-list').append(templateVideo(video))
+        $('.video-list').append(templateVideo(video))
       } else {
-        $('.dm-thumb-view').show()
         templateThumb = Handlebars.compile($('.dm-thumb-template').text())
         templateVideo = Handlebars.compile($('.dm-list-template').text())
         $('.dm-thumb-list').append(templateThumb(video))
-        $('.dm-video-list').append(templateVideo(video))
+        $('.video-list').append(templateVideo(video))
       }
     })
     $('.thumb-container').on('click', function() {
       $('.videodiv').hide()
+      $('.thumb-view').hide()
       $('.video-view').show()
       $(`.video-${$(this).data('videoid')}`).show()
     })
