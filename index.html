@@ -11,7 +11,7 @@
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="/images/favicon.ico">
   <!-- Error Template -->
-  <script type="text/x-handlebars-template" id="error-template">
+  <script type="text/x-handlebars-template" class="error-template">
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
   </script>
@@ -66,13 +66,35 @@
       </ul>
     </nav>
     <aside class="side">
-      <section class="add-interest-section content">
-        <h2>Interest Editor</h2>
+      <section class="add-interest content">
+        <h6>Add interest:</h6>
         <div class="tag-editor" contenteditable="false"></div>
-        <input type="textbox" placeholder="interests" id="interest-input">
+        <input type="textbox" placeholder="interests" class="interest-input">
         <button class="interest-add-btn" type="button">Add interest</button>
       </section>
-      <button class="view-videos-button" type="button">View videos</button>
+      <form class="radio-form">
+          <h6>Search by:</h6>
+          <div class="search-by">
+            <div>
+            <input type="radio" class="views"
+             name="options" value="views">
+            <label for="views">Most views</label>
+          </div>
+          <div>
+            <input type="radio" class="likes"
+             name="options" value="likes">
+            <label for="likes">Most likes</label>
+            </div>
+            <div>
+            <input type="radio" class="newest"
+             name="options" value="newest">
+            <label for="newest">Newest</label>
+            </div>
+          </div>
+        </form>
+      <button class="view-videos-button" type="submit">View videos</button>
+
+      
     </aside>
     <!-- Main section -->
     <main>
@@ -107,7 +129,6 @@
             <section class="yt-thumb-list allvideo">
             </section>
           </section>
-
         <!-- Dailymotion Tumbnail View -->
         <section class="thumb-view content">
           <h2>Daily Motion videos</h2>
@@ -125,7 +146,7 @@
         <!-- Error View -->
         <section class="error-view content">
           <h2 class="view-title">Ya din done something wrong.</h2>
-          <section id="error-message"></section>
+          <section class="error-message"></section>
         </section>
       </div>
 

@@ -1,8 +1,8 @@
 nav, aside {
-margin: 0 12px 0 12px;
+margin: 12px 12px 0 12px;
 }
 
-div, section, h2, h3, button {
+div, section, h2, h3, h6, button {
 margin-bottom: 20px;
 }
 
@@ -10,7 +10,7 @@ h1 {
 font-size: 30px;
 }
 
-h2 {
+h2, h6 {
 font-size: 20px;
 }
 
@@ -76,17 +76,48 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   display: block;
 }
 
-input {
+.signin-form > input {
 width: 250px;
 padding: 12px 0 12px 4px;
 margin: 8px 0;
 font-size: 16px;
-display: block;
 }
+
+.signup-form > input {
+  width: 250px;
+  padding: 12px 0 12px 4px;
+  margin: 8px 0;
+  font-size: 16px;
+  }
+
+  .add-interest > input {
+    width: 250px;
+    padding: 12px 0 12px 4px;
+    margin: 8px 0;
+    font-size: 16px;
+    }
 
 .dm-thumbnail {
   height: 180px;
   width: 320px;
+}
+
+.yt-thumb-list {
+  border-bottom: 1px solid #aaa;
+}
+
+.add-interest {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #aaa;
+}
+
+.search-by {
+  margin-top: 10px;
+}
+
+.radio-form {
+  margin-top: 40px;
 }
 
 @media (min-width: 700px) {

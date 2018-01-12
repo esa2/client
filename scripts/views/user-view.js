@@ -59,7 +59,7 @@ var app = app || {}
       page('/client')
     })
     // Prep the interest section
-    $('.add-interest-section').show()
+    $('.add-interest').show()
     userView.initAddInterestSection()
     next()
   }
@@ -113,14 +113,14 @@ var app = app || {}
     // Event handler for adding a tag
     $('.interest-add-btn').on('click', function (e) {
       e.preventDefault()
-      let value = $('#interest-input').val()
+      let value = $('.interest-input').val()
       let template = Handlebars.compile($('.interest-tag-template').text())
       // either a duplicate or empty string - disallowed
       if (app.User.interests.indexOf(value) !== -1 || value === '') {
         return
       }
       // empty out the input box
-      $('#interest-input').val('')
+      $('.interest-input').val('')
       // Append a new tag to the tag editor box
       $('.tag-editor').append(template({'value': value}))
       // Add the tag to the interests array
@@ -130,7 +130,7 @@ var app = app || {}
     })
 
     // Event handler for removing a tag
-    $('.add-interest-section').on('click', '.cross', function(e) {
+    $('.add-interest').on('click', '.cross', function(e) {
       e.preventDefault()
       let interest = $(this).parent('a').attr('data-interest')
       // Extract the index of the tag to remove

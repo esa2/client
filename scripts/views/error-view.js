@@ -8,9 +8,9 @@ var app = app || {}
   errorView.initErrorPage = function(err) {
     $('.content').hide()
     $('.error-view').show()
-    $('#error-message').empty()
-    let template = Handlebars.compile($('#error-template').text())
-    $('#error-message').append(template(err))
+    $('.error-message').empty()
+    let template = Handlebars.compile($('.error-template').text())
+    $('.error-message').append(template(err))
   }
 
   module.errorView = errorView
