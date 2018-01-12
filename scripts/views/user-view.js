@@ -51,6 +51,7 @@ var app = app || {}
 
   // Show the Video Feed
   userView.initFeedView = (ctx, next) => {
+    app.Video.all = []
     resetView()
     $('.logout-btn').show()
     $('.logout-btn').on('click', function(e){
@@ -148,11 +149,6 @@ var app = app || {}
     app.Video.all = []
     page('/client')
   })
-
-  // userView.initAboutPage = function () {
-  //   resetView()
-  //   $('.about_us-section').show()
-  // }
 
   module.userView = userView
 })(app)

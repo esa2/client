@@ -18,28 +18,26 @@
   <!-- YouTube thumbnail list template -->
   <script type="text/x-handlebars-template" class="yt-thumb-template">
       <div class="thumb-container" data-videoid={{videoId}}>
-        <img src="{{thumbnail}}">
-        <h3>{{title}}</h3>
+        <img class="thumb-img" src="{{thumbnail}}">
+        <p class="thumb-title">{{title}}<p>
       </div>
   </script>
   <!-- YouTube video list template -->
   <script type="text/x-handlebars-template" class="yt-list-template">
       <div class="video-{{videoId}} videodiv">
-        <h3>{{title}}</h3>
         <iframe type="text/html" width="720" height="405" frameborder="0" src="https://www.youtube.com/embed/{{videoId}}" allowfullscreen></iframe>
       </div>
   </script>
    <!-- DailyMotion thumbnail list template -->
    <script type="text/x-handlebars-template" class="dm-thumb-template">
     <div class="thumb-container" data-videoid={{videoId}}>
-      <img class="dm-thumbnail" src="//www.dailymotion.com/thumbnail/video/{{videoId}}">
-      <h3>{{title}}</h3>
+      <img class="thumb-img" src="//www.dailymotion.com/thumbnail/video/{{videoId}}">
+      <p class="thumb-title">{{title}}</p>
     </div>
 </script>
   <!-- DailyMotion video list template -->
   <script type="text/x-handlebars-template" class="dm-list-template">
     <div class="video-{{videoId}} videodiv">
-        <h3>{{title}}</h3>
       <iframe width="720" height="405" frameborder="0" src="//www.dailymotion.com/embed/video/{{videoId}}" allowfullscreen></iframe>
     </div>
   </script>

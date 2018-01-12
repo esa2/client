@@ -97,11 +97,6 @@ font-size: 16px;
     font-size: 16px;
     }
 
-.dm-thumbnail {
-  height: 180px;
-  width: 320px;
-}
-
 .yt-thumb-list {
   border-bottom: 1px solid #aaa;
 }
@@ -120,6 +115,16 @@ font-size: 16px;
   margin-top: 40px;
 }
 
+.thumb-img {
+  height: 180px;
+  width: 320px;
+}
+
+.thumb-title {
+  width: 320px;
+}
+
+
 @media (min-width: 700px) {
 
   .wrapper {
@@ -137,9 +142,6 @@ font-size: 16px;
 
   .thumb-container {
     display: inline-block;
-    height: 240px;
-    width: 320px;
-    overflow-wrap: break-word;
+    
   }
-
 }
