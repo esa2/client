@@ -53,8 +53,8 @@ var app = app || {}
   userView.initFeedView = (ctx, next) => {
     resetView()
     $('.logout-btn').show()
-    $('.logout-btn').on('click', function(event){
-      event.preventDefault()
+    $('.logout-btn').on('click', function(e){
+      e.preventDefault()
       module.User.logout()
       page('/client')
     })
@@ -95,6 +95,11 @@ var app = app || {}
       $(`.video-${$(this).data('videoid')}`).show()
     })
   }
+
+  $('.to-thumb-button').on('click', function() {
+    $('.video-view').hide()
+    $('.thumb-view').show()
+  })
 
   userView.initAddInterestSection = () => {
     // First, empty the tag editor
